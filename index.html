@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XzeCure ICU Tool</title>
+    <title>XzeCure ICU tool</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <style>
@@ -43,16 +43,26 @@
             cursor: pointer;
             @apply p-4 mb-3 rounded-lg font-extrabold text-xl bg-blue-100 text-blue-800 hover:bg-blue-200 transition duration-150;
         }
+        .protocol-category-items {
+            transition: height 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body class="p-4 sm:p-6 md:p-8 flex flex-col min-h-screen">
 
     <!-- Header and Emergency Button (Always Visible) -->
     <header class="mb-6 bg-white p-4 rounded-xl card-shadow flex flex-col md:flex-row justify-between items-center">
-        <div>
-            <h1 class="text-3xl font-extrabold text-blue-900">XzeCure ABG Tool</h1>
-            <p class="text-sm text-gray-600">Arterial Blood Gas Analysis & Metabolic Status Interpreter</p>
+        <!-- Logo and Title Block -->
+        <div class="flex items-center space-x-4">
+            <!-- LOGO: Points to logo.png in your GitHub repo -->
+            <img src="logo.png" alt="XzeCure Logo" class="h-14 w-14 rounded-full border-2 border-blue-500 hidden sm:block" onerror="this.onerror=null; this.src='https://placehold.co/80x80/0A3D62/FFFFFF?text=XICU'">
+            <div>
+                <h1 class="text-3xl font-extrabold text-blue-900">XzeCure ICU tool</h1>
+                <!-- Subtitle removed as requested -->
+            </div>
         </div>
+        
+        <!-- Emergency Button -->
         <a href="https://api.whatsapp.com/send?phone=918200095781&text=My%20Patient%20needs%20urgent%20ICU%20care.%20Where%20can%20we%20refer%3F" 
            target="_blank"
            class="mt-4 md:mt-0 px-6 py-3 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition duration-150 shadow-lg text-center whitespace-nowrap">
@@ -118,14 +128,13 @@
                 </button>
             </div>
             
-            <!-- Protocol Categories (Clickable to reveal sub-protocols) -->
+            <!-- Protocol Category 1: RESUSCITATION & CODE BLUE -->
             <div id="protocol-category-1" onclick="toggleProtocolCategory('1')" class="protocol-category">
                 1) RESUSCITATION & CODE BLUE <span class="float-right text-lg arrow-1">→</span>
             </div>
             <div id="protocol-items-1" class="protocol-category-items border p-4 rounded-lg bg-gray-50 mb-4 hidden space-y-2">
-                <!-- Dropdown items will be appended here by JS when category is clicked -->
                 
-                <!-- Protocol Dropdown A -->
+                <!-- Protocol Dropdown 1A -->
                 <div id="protocol-1A" class="border border-gray-200 rounded-lg">
                     <div onclick="toggleProtocol('protocol-1A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-blue-700 text-sm">
                         A (ACLS ALGORITHM)
@@ -145,30 +154,30 @@
                             suction, resuscitation drugs (epinephrine, amiodarone, lidocaine), capnography, monitors.
                         **Step-by-step Checklist:**
                           1. Ensure scene safety and assess responsiveness. Call for help / activate code.
-                          2. Start high-quality CPR immediately (compression rate $100-120$/min; depth $5-6$ cm;
-                             allow full chest recoil). Rotate compressors every $2$ minutes.
+                          2. Start high-quality CPR immediately (compression rate 100–120/min; depth 5–6 cm;
+                             allow full chest recoil). Rotate compressors every 2 minutes.
                           3. Attach monitor/defibrillator as soon as available and analyze rhythm.
                           4. **If shockable rhythm (VF / pulseless VT):**
                              - Deliver immediate unsynchronized shock (biphasic device energy per manufacturer).
-                             - Resume CPR immediately for $2$ minutes without interrupting compressions.
-                             - After $2$ minutes, check rhythm and pulse; repeat shock if shockable.
-                             - Give epinephrine $1$ mg IV/IO every $3-5$ minutes (as soon as vascular access available).
-                             - Consider amiodarone $300$ mg IV bolus after the $3^{rd}$ shock (repeat $150$ mg if needed).
+                             - Resume CPR immediately for 2 minutes without interrupting compressions.
+                             - After 2 minutes, check rhythm and pulse; repeat shock if shockable.
+                             - Give epinephrine 1 mg IV/IO every 3–5 minutes (as soon as vascular access available).
+                             - Consider amiodarone 300 mg IV bolus after the 3rd shock (repeat 150 mg if needed).
                           5. **If non-shockable rhythm (PEA / asystole):**
-                             - Continue CPR in $2$-minute cycles.
-                             - Give epinephrine $1$ mg IV/IO as soon soon as possible; repeat q$3-5$ min.
-                             - Identify and treat reversible causes (Hs $\&$ Ts).
+                             - Continue CPR in 2-minute cycles.
+                             - Give epinephrine 1 mg IV/IO as soon as soon as possible; repeat q3–5 min.
+                             - Identify and treat reversible causes (Hs & Ts).
                           6. **Airway management:** secure advanced airway when feasible (ETT or supraglottic).
-                             - Once advanced airway placed: continuous CPR with ventilation rate $\sim 10$ breaths/min
-                               ($1$ breath every $6$ seconds) and continuous capnography monitoring.
-                          7. **Reversible causes:** evaluate and treat Hs $\&$ Ts:
+                             - Once advanced airway placed: continuous CPR with ventilation rate ~10 breaths/min
+                               (1 breath every 6 seconds) and continuous capnography monitoring.
+                          7. **Reversible causes:** evaluate and treat Hs & Ts:
                              - **Hypovolemia, Hypoxia, Hydrogen ion (acidosis), Hypo/Hyperkalemia, Hypothermia.**
                              - **Tension pneumothorax, Tamponade (cardiac), Toxins, Thrombosis (pulmonary/coronary).**
                           8. **If ROSC achieved:**
-                             - Implement post-cardiac arrest care: maintain oxygenation ($\text{SpO}_2$ $92-98\%$), target MAP $\ge 65$ mmHg,
-                               consider targeted temperature management (TTM) if comatose, and identify $\&$ treat cause.
-                        **Orders $\&$ Monitoring:**
-                          - Continuous ECG, $\text{SpO}_2$, $\text{EtCO}_2$; ABG analysis; immediate CXR after stabilization;
+                             - Implement post-cardiac arrest care: maintain oxygenation (SpO₂ 92–98%), target MAP ≥ 65 mmHg,
+                               consider targeted temperature management (TTM) if comatose, and identify & treat cause.
+                        **Orders & Monitoring:**
+                          - Continuous ECG, SpO₂, EtCO₂; ABG analysis; immediate CXR after stabilization;
                             labs: electrolytes, glucose, CBC, coagulation, troponin; consider urgent coronary angiography
                             if STEMI suspected.
                         **Escalation / When to Call Senior:**
@@ -180,7 +189,7 @@
                     </div>
                 </div>
 
-                <!-- Protocol Dropdown B -->
+                <!-- Protocol Dropdown 1B -->
                 <div id="protocol-1B" class="border border-gray-200 rounded-lg">
                     <div onclick="toggleProtocol('protocol-1B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-blue-700 text-sm">
                         B (BLS ALGORITHM)
@@ -192,16 +201,16 @@
                         **Indication:**
                           - Unresponsive patient with absent or abnormal breathing.
                         **Checklist:**
-                          - Check responsiveness; shout for help; open airway and check breathing (no more than $10$ sec).
+                          - Check responsiveness; shout for help; open airway and check breathing (no more than 10 sec).
                           - Call for code / activate emergency response.
-                          - Start high-quality CPR: single rescuer adult $30$ compressions : $2$ breaths.
+                          - Start high-quality CPR: single rescuer adult 30 compressions : 2 breaths.
                           - Attach AED / defibrillator and follow prompts; resume CPR immediately after shock.
                         **Notes:**
-                          - With two rescuers and advanced airway in place, give continuous compressions with $1$ breath every $6$ sec.
+                          - With two rescuers and advanced airway in place, give continuous compressions with 1 breath every 6 sec.
                     </div>
                 </div>
 
-                <!-- Protocol Dropdown C -->
+                <!-- Protocol Dropdown 1C -->
                 <div id="protocol-1C" class="border border-gray-200 rounded-lg">
                     <div onclick="toggleProtocol('protocol-1C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-blue-700 text-sm">
                         C (Post cardiac arrest)
@@ -213,12 +222,12 @@
                         **Goals:**
                           - Optimize oxygenation and perfusion; prevent secondary brain injury; treat underlying cause.
                         **Checklist:**
-                          1. Maintain oxygenation: target $\text{SpO}_2$ $92-98\%$ (avoid hyperoxia).
-                          2. Hemodynamic support: maintain MAP $\ge 65$ mmHg (titrate vasopressors — norepinephrine first-line).
-                          3. Obtain 12-lead ECG; if STEMI $\rightarrow$ consult cardiology for immediate reperfusion (PCI) if appropriate.
+                          1. Maintain oxygenation: target SpO₂ 92–98% (avoid hyperoxia).
+                          2. Hemodynamic support: maintain MAP ≥ 65 mmHg (titrate vasopressors — norepinephrine first-line).
+                          3. Obtain 12-lead ECG; if STEMI → consult cardiology for immediate reperfusion (PCI) if appropriate.
                           4. Consider targeted temperature management (TTM) for comatose survivors per local protocol.
                           5. Continue neurological monitoring and send neuroimaging as indicated.
-                        **Monitoring $\&$ Orders:**
+                        **Monitoring & Orders:**
                           - Frequent neuro checks, continuous cardiac monitoring, ABG, electrolytes, lactate, urine output.
                         **Notes:**
                           - Post-arrest care is multidisciplinary; early involvement of cardiology and neurology may be critical.
@@ -227,11 +236,11 @@
             </div>
 
 
-            <!-- Protocol Category 2 (Clickable to reveal sub-protocols) -->
+            <!-- Protocol Category 2: AIRWAY & VENTILATION -->
             <div id="protocol-category-2" onclick="toggleProtocolCategory('2')" class="protocol-category">
                 2) AIRWAY & VENTILATION <span class="float-right text-lg arrow-2">→</span>
             </div>
-            <div id="protocol-items-2" class="protocol-category-items border p-4 rounded-lg bg-gray-50 hidden space-y-2">
+            <div id="protocol-items-2" class="protocol-category-items border p-4 rounded-lg bg-gray-50 mb-4 hidden space-y-2">
                 
                 <!-- Protocol Dropdown 2A -->
                 <div id="protocol-2A" class="border border-gray-200 rounded-lg">
@@ -243,7 +252,7 @@
                         **A. Rapid Sequence Intubation (RSI) Checklist (Adult)**
                         
                         **Indication:**
-                          - Need for definitive airway due to respiratory failure, loss of airway protection, GCS $\le 8$,
+                          - Need for definitive airway due to respiratory failure, loss of airway protection, GCS ≤ 8,
                             or anticipated deterioration.
                         **Goal:**
                           - Secure airway rapidly and safely while minimizing hypoxia and hemodynamic compromise.
@@ -252,20 +261,20 @@
                             BVM with PEEP, capnography, oxygen source, backup supraglottic devices (LMA), surgical airway kit.
                           - Assign roles: airway operator, assistant, drug nurse, airway assistant, scribe.
                         **Step-by-step Checklist:**
-                          1. Pre-oxygenate for $3-5$ minutes with $100\%$ O$_2$ (consider HFNC + NRB or BVM with PEEP).
+                          1. Pre-oxygenate for 3–5 minutes with 100% O₂ (consider HFNC + NRB or BVM with PEEP).
                           2. Position patient (ramp position for obese; sniffing position as indicated).
                           3. Prepare and check all equipment; ensure functioning suction and capnography.
-                          4. Prepare induction agent and paralytic (e.g., etomidate $0.2-0.3$ mg/kg or ketamine $1-2$ mg/kg;
-                             succinylcholine $1-1.5$ mg/kg or rocuronium $1$ mg/kg — choose per hemodynamic status and contraindications).
+                          4. Prepare induction agent and paralytic (e.g., etomidate 0.2–0.3 mg/kg or ketamine 1–2 mg/kg;
+                             succinylcholine 1–1.5 mg/kg or rocuronium 1 mg/kg — choose per hemodynamic status and contraindications).
                           5. Pre-treatment if indicated (e.g., fentanyl to blunt sympathetic response; atropine in infants).
-                          6. Perform intubation attempt (limit to maximum $2-3$ attempts by experienced operators).
-                          7. If first-pass fails $\rightarrow$ consider repositioning, use bougie, video laryngoscope, or change operator.
-                          8. If cannot intubate and cannot ventilate $\rightarrow$ proceed to supraglottic airway and call for emergency surgical airway.
+                          6. Perform intubation attempt (limit to maximum 2–3 attempts by experienced operators).
+                          7. If first-pass fails → consider repositioning, use bougie, video laryngoscope, or change operator.
+                          8. If cannot intubate and cannot ventilate → proceed to supraglottic airway and call for emergency surgical airway.
                           9. Confirm tube placement with continuous waveform capnography, chest rise, and auscultation.
                          10. Secure tube and document insertion depth and confirmation method.
                         **Post-intubation Management:**
                           - Start mechanical ventilation with appropriate initial settings (e.g., lung-protective strategy if ARDS risk).
-                          - Start sedation $\&$ analgesia; monitor BP and HR; obtain CXR to confirm position.
+                          - Start sedation & analgesia; monitor BP and HR; obtain CXR to confirm position.
                         **Escalation:**
                           - If oxygenation or ventilation inadequate, call senior ICU/anaesthesia and consider bronchoscopy or surgical airway.
                     </div>
@@ -287,8 +296,8 @@
                           2. Optimize positioning and pre-oxygenation.
                           3. Attempt intubation with most experienced operator; use video laryngoscopy when available.
                           4. Limit number of attempts; use bougie on difficult laryngoscopy.
-                          5. If intubation fails but ventilation possible $\rightarrow$ consider awake techniques, fiberoptic, or supraglottic device.
-                          6. If cannot ventilate/oxygenate $\rightarrow$ perform emergency cricothyroidotomy per instititutional guideline.
+                          5. If intubation fails but ventilation possible → consider awake techniques, fiberoptic, or supraglottic device.
+                          6. If cannot ventilate/oxygenate → perform emergency cricothyroidotomy per instititutional guideline.
                     </div>
                 </div>
 
@@ -299,16 +308,16 @@
                         <span class="text-lg">▼</span>
                     </div>
                     <div id="protocol-2C-content" class="protocol-content p-4 bg-white text-xs whitespace-pre-wrap">
-                        **C. Extubation Criteria $\&$ Weaning Checklist**
+                        **C. Extubation Criteria & Weaning Checklist**
 
                         **Indication:**
                           - Patient showing readiness for liberation from mechanical ventilation.
                         **Checklist:**
                           - Hemodynamic stability (no escalating vasopressors), adequate oxygenation and ventilation parameters,
                             manageable secretions, intact airway protective reflexes, adequate mental status.
-                          - Perform Spontaneous Breathing Trial (SBT): $30-120$ minutes on CPAP $\le 5$ cmH$_2$O or T-piece.
-                          - Use RSBI (Rapid Shallow Breathing Index = RR / tidal volume (L)) $\le 105$ as supportive metric.
-                          - If SBT passed $\rightarrow$ perform cuff leak test if airway edema risk; proceed with extubation.
+                          - Perform Spontaneous Breathing Trial (SBT): 30–120 minutes on CPAP ≤5 cmH₂O or T-piece.
+                          - Use RSBI (Rapid Shallow Breathing Index = RR / tidal volume (L)) ≤ 105 as supportive metric.
+                          - If SBT passed → perform cuff leak test if airway edema risk; proceed with extubation.
                         **Post-extubation Orders:**
                           - Apply supplemental oxygen (HFNC or mask) as required; monitor respiratory status closely;
                             arrange chest physiotherapy and swallowing assessment if needed.
@@ -329,18 +338,18 @@
                         **Goals:**
                           - Minimize ventilator-induced lung injury; improve oxygenation.
                         **Checklist:**
-                          1. Tidal volume: $6$ mL/kg predicted body weight (PBW) ($4-8$ mL/kg acceptable).
-                          2. Plateau pressure: maintain $\le 30$ cmH$_2$O.
-                          3. Use ARDSNet PEEP/FiO$_2$ ladder to titrate PEEP and FiO$_2$.
-                          4. Target $\text{SpO}_2$ $88-95\%$ or $\text{PaO}_2$ $55-80$ mmHg (individualize).
-                          5. Permissive hypercapnia allowed if pH $\ge 7.15$.
-                          6. Prone positioning if $\text{PaO}_2/\text{FiO}_2 < 150$ (for at least $12-16$ hours/day).
+                          1. Tidal volume: 6 mL/kg predicted body weight (PBW) (4–8 mL/kg acceptable).
+                          2. Plateau pressure: maintain ≤ 30 cmH₂O.
+                          3. Use ARDSNet PEEP/FiO₂ ladder to titrate PEEP and FiO₂.
+                          4. Target SpO₂ 88–95% or PaO₂ 55–80 mmHg (individualize).
+                          5. Permissive hypercapnia allowed if pH ≥ 7.15.
+                          6. Prone positioning if PaO₂/FiO₂ < 150 (for at least 12–16 hours/day).
                           7. Consider neuromuscular blockade in early severe ARDS if indicated.
                           8. Employ conservative fluid strategy after shock has resolved.
                         **Monitoring:**
                           - ABG, plateau pressures, driving pressure, oxygenation metrics, hemodynamics.
                         **Escalation:**
-                          - If refractory hypoxemia $\rightarrow$ consider ECMO referral if available and appropriate.
+                          - If refractory hypoxemia → consider ECMO referral if available and appropriate.
                     </div>
                 </div>
 
@@ -359,9 +368,302 @@
                         **Checklist:**
                           1. Confirm no contraindications (vomiting, facial trauma, inability to protect airway, severe hypoxemia).
                           2. Choose mask interface and start with IPAP/EPAP settings appropriate to the condition
-                             (e.g., IPAP $8-12$, EPAP $4-6$ for COPD exacerbation).
-                          3. Monitor ABG at baseline and reassess at $1-2$ hours.
-                          4. Escalate to intubation if worsening oxygenation, rising $\text{CO}_2$ with acidosis or clinical fatigue.
+                             (e.g., IPAP 8–12, EPAP 4–6 for COPD exacerbation).
+                          3. Monitor ABG at baseline and reassess at 1–2 hours.
+                          4. Escalate to intubation if worsening oxygenation, rising CO₂ with acidosis or clinical fatigue.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Protocol Category 3: CIRCULATION & SHOCK MANAGEMENT -->
+            <div id="protocol-category-3" onclick="toggleProtocolCategory('3')" class="protocol-category">
+                3) CIRCULATION & SHOCK MANAGEMENT <span class="float-right text-lg arrow-3">→</span>
+            </div>
+            <div id="protocol-items-3" class="protocol-category-items border p-4 rounded-lg bg-gray-50 mb-4 hidden space-y-2">
+                
+                <!-- Protocol Dropdown 3A (Sepsis) -->
+                <div id="protocol-3A" class="border border-gray-200 rounded-lg">
+                    <div onclick="toggleProtocol('protocol-3A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-blue-700 text-sm">
+                        A. Sepsis / Septic Shock — Hour-1 Bundle & Management
+                        <span class="text-lg">▼</span>
+                    </div>
+                    <div id="protocol-3A-content" class="protocol-content p-4 bg-white text-xs whitespace-pre-wrap">
+                        **A. Sepsis / Septic Shock — Hour-1 Bundle & Management**
+                        
+                        **Indication:**
+                          - Suspected or documented infection with organ dysfunction (qSOFA/SOFA) or septic shock.
+                        **Goals:**
+                          - Rapid resuscitation to prevent organ failure and mortality.
+                        **Checklist (Within 1 Hour):**
+                          1. Measure serum lactate; remeasure if initial lactate > 2 mmol/L.
+                          2. Obtain blood cultures prior to antibiotics (if this does not cause significant delay).
+                          3. Administer broad-spectrum IV antibiotics promptly (choose per suspected source and local antibiogram).
+                          4. Begin fluid resuscitation (initial recommendation: 30 mL/kg crystalloid for hypotension or lactate ≥ 4 mmol/L),
+                             individualize in heart failure or renal impairment.
+                          5. Start vasopressors (norepinephrine first-line) if persistent hypotension after initial fluid resuscitation;
+                             target MAP ≥ 65 mmHg.
+                        **Ongoing:**
+                          - Frequent reassessment: urine output, lactate clearance, hemodynamics, and source control procedures as required.
+                        **Notes:**
+                          - Early de-escalation based on culture results and stewardship review.
+                    </div>
+                </div>
+
+                <!-- Protocol Dropdown 3B (Vasopressor) -->
+                <div id="protocol-3B" class="border border-gray-200 rounded-lg">
+                    <div onclick="toggleProtocol('protocol-3B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-blue-700 text-sm">
+                        B. Vasopressor Initiation & Titration
+                        <span class="text-lg">▼</span>
+                    </div>
+                    <div id="protocol-3B-content" class="protocol-content p-4 bg-white text-xs whitespace-pre-wrap">
+                        **B. Vasopressor Initiation & Titration**
+
+                        **Indication:**
+                          - Persistent hypotension after initial fluid resuscitation (MAP < 65 mmHg).
+                        **Checklist:**
+                          1. Start norepinephrine infusion and titrate to target MAP ≥ 65 mmHg.
+                          2. If inadequate response, consider adding vasopressin (0.03 units/min) or epinephrine per protocol.
+                          3. Consider insertion of arterial line for continuous blood pressure monitoring.
+                        **Monitoring:**
+                          - Continuous ECG for arrhythmias, peripheral perfusion, lactate trends, urine output.
+                    </div>
+                </div>
+
+                <!-- Protocol Dropdown 3C (Fluid) -->
+                <div id="protocol-3C" class="border border-gray-200 rounded-lg">
+                    <div onclick="toggleProtocol('protocol-3C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-blue-700 text-sm">
+                        C. Fluid Resuscitation Protocol
+                        <span class="text-lg">▼</span>
+                    </div>
+                    <div id="protocol-3C-content" class="protocol-content p-4 bg-white text-xs whitespace-pre-wrap">
+                        **C. Fluid Resuscitation Protocol**
+
+                        **Indication:**
+                          - Hypovolemia or hypoperfusion states.
+                        **Checklist:**
+                          1. Give small boluses of crystalloid (e.g., 250–500 mL) and reassess frequently.
+                          2. For sepsis, 30 mL/kg initially (tailor in CHF/CKD patients).
+                          3. Use dynamic indices (passive leg raise, stroke volume variation, ultrasound IVC) when available to guide further fluids.
+                        **Notes:**
+                          - Avoid fluid overload; shift to vasopressors if non-responsive to fluid challenge.
+                    </div>
+                </div>
+
+                <!-- Protocol Dropdown 3D (MTP) -->
+                <div id="protocol-3D" class="border border-gray-200 rounded-lg">
+                    <div onclick="toggleProtocol('protocol-3D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-blue-700 text-sm">
+                        D. Massive Transfusion Protocol (MTP)
+                        <span class="text-lg">▼</span>
+                    </div>
+                    <div id="protocol-3D-content" class="protocol-content p-4 bg-white text-xs whitespace-pre-wrap">
+                        **D. Massive Transfusion Protocol (MTP)**
+
+                        **Indication:**
+                          - Ongoing hemorrhage with hemodynamic instability or anticipated massive blood loss.
+                        **Checklist:**
+                          1. Activate MTP per hospital policy and notify blood bank immediately.
+                          2. Deliver balanced transfusion packs (commonly 1:1:1 PRBC:FFP:platelets) per institutional protocol.
+                          3. Monitor and correct calcium levels, fibrinogen, and maintain normothermia.
+                          4. Consider tranexamic acid (TXA) in trauma if within appropriate time window.
+                        **Monitoring:**
+                          - Frequent ABG, Hb, coagulation profile, fibrinogen, electrolytes.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Protocol Category 4: Neurological Emergencies (NEW) -->
+            <div id="protocol-category-4" onclick="toggleProtocolCategory('4')" class="protocol-category">
+                4) Neurological Emergencies <span class="float-right text-lg arrow-4">→</span>
+            </div>
+            <div id="protocol-items-4" class="protocol-category-items border p-4 rounded-lg bg-gray-50 mb-4 hidden space-y-2">
+                
+                <!-- Protocol Dropdown 4A (ICP) -->
+                <div id="protocol-4A" class="border border-gray-200 rounded-lg">
+                    <div onclick="toggleProtocol('protocol-4A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-blue-700 text-sm">
+                        A. Raised Intracranial Pressure (ICP) — Tiered Management
+                        <span class="text-lg">▼</span>
+                    </div>
+                    <div id="protocol-4A-content" class="protocol-content p-4 bg-white text-xs whitespace-pre-wrap">
+                        **A. Raised Intracranial Pressure (ICP) — Tiered Management**
+                        
+                        **Indication:**
+                          - Clinical or measured ICP elevation (trauma, ICH, stroke).
+                        **Goals:**
+                          - Maintain cerebral perfusion pressure (CPP) and prevent secondary brain injury.
+                        **Tier 0 (General Measures):**
+                          - Head elevation 30°, neutral neck alignment; avoid neck compression.
+                          - Avoid hypoxia and hypotension; maintain normothermia and normoglycemia.
+                        **Tier 1:**
+                          - Sedation/analgesia; CSF drainage if EVD present; hyperosmolar therapy (3% saline boluses or mannitol 0.25–1 g/kg if volume status allows).
+                        **Tier 2:**
+                          - Neuromuscular blockade, repeat hyperosmolar therapy under strict monitoring.
+                        **Tier 3:**
+                          - Decompressive craniectomy or other advanced neurosurgical measures.
+                        **Monitoring:**
+                          - Continuous ICP monitor if available, MAP, CPP (CPP = MAP − ICP), hourly neuro checks.
+                        **Escalation:**
+                          - Prompt neurosurgery consult for increasing ICP despite measures.
+                    </div>
+                </div>
+
+                <!-- Protocol Dropdown 4B (Status Epilepticus) -->
+                <div id="protocol-4B" class="border border-gray-200 rounded-lg">
+                    <div onclick="toggleProtocol('protocol-4B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-blue-700 text-sm">
+                        B. Status Epilepticus Management
+                        <span class="text-lg">▼</span>
+                    </div>
+                    <div id="protocol-4B-content" class="protocol-content p-4 bg-white text-xs whitespace-pre-wrap">
+                        **B. Status Epilepticus Management (Adult)**
+
+                        **Indication:**
+                          - Seizure activity > 5 minutes or recurrent seizures without recovery.
+                        **Checklist:**
+                          1. Secure airway, breathing, oxygenation; check glucose and correct hypoglycemia (IV dextrose).
+                          2. First-line: IV benzodiazepine (lorazepam 4 mg IV slow; may repeat x1).
+                          3. Second-line: load antiepileptic medication e.g., levetiracetam 1–2 g IV, fosphenytoin 20 mg PE/kg, or valproate 20–40 mg/kg IV (choose per contraindications).
+                          4. If refractory: initiate anesthetic infusion (midazolam/propofol/thiopental), intubate for airway protection, and arrange continuous EEG monitoring.
+                        **Monitoring:**
+                          - Continuous EEG if available, vital signs, ABG, electrolytes.
+                    </div>
+                </div>
+
+                <!-- Protocol Dropdown 4C (Ischemic Stroke) -->
+                <div id="protocol-4C" class="border border-gray-200 rounded-lg">
+                    <div onclick="toggleProtocol('protocol-4C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-blue-700 text-sm">
+                        C. Acute Ischemic Stroke — Thrombolysis Checklist (IV tPA)
+                        <span class="text-lg">▼</span>
+                    </div>
+                    <div id="protocol-4C-content" class="protocol-content p-4 bg-white text-xs whitespace-pre-wrap">
+                        **C. Acute Ischemic Stroke — Thrombolysis Checklist (IV tPA)**
+
+                        **Indication:**
+                          - Acute ischemic stroke within time window and no contraindications.
+                        **Checklist:**
+                          1. Rapid neurological assessment and NIHSS score.
+                          2. Non-contrast CT brain to exclude hemorrhage.
+                          3. If eligible, administer IV alteplase per weight-based dosing (verify exact dose in drug lookup).
+                          4. Post-thrombolysis monitoring in ICU/stroke unit: frequent neuro checks and BP control per protocol.
+                        **Notes:**
+                          - Follow AHA/ASA guidelines and local stroke pathway.
+                    </div>
+                </div>
+
+                <!-- Protocol Dropdown 4D (ICH) -->
+                <div id="protocol-4D" class="border border-gray-200 rounded-lg">
+                    <div onclick="toggleProtocol('protocol-4D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-blue-700 text-sm">
+                        D. Intracerebral Hemorrhage (ICH) Emergency Management
+                        <span class="text-lg">▼</span>
+                    </div>
+                    <div id="protocol-4D-content" class="protocol-content p-4 bg-white text-xs whitespace-pre-wrap">
+                        **D. Intracerebral Hemorrhage (ICH) Emergency Management**
+
+                        **Indication:**
+                          - ICH on imaging with neurological deterioration or large hematoma.
+                        **Checklist:**
+                          1. ABCs and stabilization; reverse anticoagulation if present (vitamin K, PCC/FFP for warfarin; specific antidotes for DOACs if available).
+                          2. Control blood pressure per neuro/ICH protocol (avoid rapid BP swings).
+                          3. Neurosurgery consult for possible surgical evacuation; monitor ICP and consider ICP-targeted therapy.
+                    </div>
+                </div>
+
+                <!-- Protocol Dropdown 4E (Brain Death) -->
+                <div id="protocol-4E" class="border border-gray-200 rounded-lg">
+                    <div onclick="toggleProtocol('protocol-4E-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-blue-700 text-sm">
+                        E. Brain Death Determination Checklist
+                        <span class="text-lg">▼</span>
+                    </div>
+                    <div id="protocol-4E-content" class="protocol-content p-4 bg-white text-xs whitespace-pre-wrap">
+                        **E. Brain Death Determination Checklist**
+
+                        **Indication:**
+                          - Suspected brain death after catastrophic neurologic injury.
+                        **Checklist:**
+                          - Follow institutional and national legal criteria (prerequisites: comatose state, no confounding factors,
+                            normothermia, normotension), perform brainstem reflex assessment and apnea test per protocol,
+                            and document thoroughly. Involve neurology/neurosurgery and legal as required.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Protocol Category 5: Respiratory Emergencies (NEW) -->
+            <div id="protocol-category-5" onclick="toggleProtocolCategory('5')" class="protocol-category">
+                5) Respiratory Emergencies <span class="float-right text-lg arrow-5">→</span>
+            </div>
+            <div id="protocol-items-5" class="protocol-category-items border p-4 rounded-lg bg-gray-50 mb-4 hidden space-y-2">
+                
+                <!-- Protocol Dropdown 5A (Asthma) -->
+                <div id="protocol-5A" class="border border-gray-200 rounded-lg">
+                    <div onclick="toggleProtocol('protocol-5A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-blue-700 text-sm">
+                        A. Acute Severe Asthma (Status Asthmaticus)
+                        <span class="text-lg">▼</span>
+                    </div>
+                    <div id="protocol-5A-content" class="protocol-content p-4 bg-white text-xs whitespace-pre-wrap">
+                        **A. Acute Severe Asthma (Status Asthmaticus)**
+                        
+                        **Indication:**
+                          - Severe bronchospasm refractory to initial treatment; respiratory fatigue; life-threatening features.
+                        **Checklist:**
+                          1. High-flow oxygen to maintain target SpO₂.
+                          2. Continuous nebulized short-acting beta-agonist (salbutamol), consider ipratropium.
+                          3. Systemic corticosteroids (IV methylprednisolone or equivalent).
+                          4. Consider IV magnesium sulfate (2 g over 20 min) for severe cases.
+                          5. Trial NIV in selected patients; if signs of fatigue, rising PaCO₂, or altered consciousness — intubate early.
+                        **Monitoring:**
+                          - ABG, electrolyte monitoring (K+), continuous SpO₂.
+                    </div>
+                </div>
+
+                <!-- Protocol Dropdown 5B (COPD) -->
+                <div id="protocol-5B" class="border border-gray-200 rounded-lg">
+                    <div onclick="toggleProtocol('protocol-5B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-blue-700 text-sm">
+                        B. Acute COPD Exacerbation Management
+                        <span class="text-lg">▼</span>
+                    </div>
+                    <div id="protocol-5B-content" class="protocol-content p-4 bg-white text-xs whitespace-pre-wrap">
+                        **B. Acute COPD Exacerbation Management**
+
+                        **Checklist:**
+                          1. Oxygen titrated to SpO₂ 88–92%.
+                          2. Nebulized bronchodilators (short-acting beta-agonist & anticholinergic).
+                          3. Systemic corticosteroids (e.g., IV methylprednisolone/dose per local protocol).
+                          4. NIV for hypercapnic respiratory failure; intubate if NIV fails or patient deteriorates.
+                          5. Consider antibiotics if infection suspected.
+                    </div>
+                </div>
+
+                <!-- Protocol Dropdown 5C (PE) -->
+                <div id="protocol-5C" class="border border-gray-200 rounded-lg">
+                    <div onclick="toggleProtocol('protocol-5C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-blue-700 text-sm">
+                        C. Pulmonary Embolism (PE) — Acute Management
+                        <span class="text-lg">▼</span>
+                    </div>
+                    <div id="protocol-5C-content" class="protocol-content p-4 bg-white text-xs whitespace-pre-wrap">
+                        **C. Pulmonary Embolism (PE) — Acute Management**
+
+                        **Indication:**
+                          - Suspected/confirmed PE with hemodynamic instability or RV strain.
+                        **Checklist:**
+                          - Hemodynamically unstable patients: consider systemic thrombolysis if no contraindications and consult relevant specialists.
+                          - Hemodynamically stable: start anticoagulation (LMWH/UFH) unless contraindicated; imaging (CTPA) where feasible.
+                          - For large burden / RV dysfunction: consider catheter-directed therapy or surgical embolectomy with specialist teams.
+                    </div>
+                </div>
+
+                <!-- Protocol Dropdown 5D (Pneumothorax) -->
+                <div id="protocol-5D" class="border border-gray-200 rounded-lg">
+                    <div onclick="toggleProtocol('protocol-5D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-blue-700 text-sm">
+                        D. Tension Pneumothorax & Pneumothorax Management
+                        <span class="text-lg">▼</span>
+                    </div>
+                    <div id="protocol-5D-content" class="protocol-content p-4 bg-white text-xs whitespace-pre-wrap">
+                        **D. Tension Pneumothorax & Pneumothorax Management**
+
+                        **Indication:**
+                          - Sudden respiratory distress, hypoxia, hypotension, unilateral absent breath sounds, possible tracheal deviation.
+                        **Checklist:**
+                          1. Immediate decompression: needle decompression (2nd ICS mid-clavicular or 5th ICS mid-axillary per local policy) for tension physiology.
+                          2. Follow with chest tube insertion (tube thoracostomy) using sterile technique and confirm position with CXR.
+                          3. For small, asymptomatic primary pneumothorax: observation and supplemental O₂ may suffice depending on size.
                     </div>
                 </div>
             </div>
@@ -439,7 +741,7 @@
     
     <script>
         // Global Constants
-        const ALGORITHM_VERSION = '3.0.3-ABG-Page-Protocols'; 
+        const ALGORITHM_VERSION = '3.2.0-FullICU'; 
         const NORMAL_AG = 12;
         const NORMAL_HCO3 = 24;
         const NORMAL_PCO2 = 40;
@@ -462,7 +764,7 @@
             return moment().toISOString();
         }
 
-        // --- View Toggling Functions ---
+        // --- View Toggling Functions (for the single-page experience) ---
         function showProtocolsPage() {
             document.getElementById('abg-view').classList.add('hidden');
             document.getElementById('protocol-view').classList.remove('hidden');
@@ -476,20 +778,24 @@
         function toggleProtocolCategory(categoryId) {
             const content = document.getElementById(`protocol-items-${categoryId}`);
             const arrow = document.querySelector(`.arrow-${categoryId}`);
+            const isContentVisible = !content.classList.contains('hidden');
 
-            if (content.classList.contains('hidden')) {
-                // Show content
+            // Hide all protocol items and reset arrows
+            document.querySelectorAll('.protocol-category-items').forEach(item => {
+                item.classList.add('hidden');
+            });
+            document.querySelectorAll('.protocol-category .float-right').forEach(arr => {
+                arr.innerHTML = '→';
+            });
+            document.querySelectorAll('.protocol-content').forEach(subContent => {
+                subContent.classList.remove('active');
+            });
+
+
+            if (!isContentVisible) {
+                // Show the clicked content
                 content.classList.remove('hidden');
                 arrow.innerHTML = '↓'; // Down arrow
-            } else {
-                // Hide content and ensure all sub-protocols are closed
-                content.classList.add('hidden');
-                arrow.innerHTML = '→'; // Right arrow
-                
-                // Close all expandable sub-protocols within this category
-                content.querySelectorAll('.protocol-content').forEach(subContent => {
-                    subContent.classList.remove('active');
-                });
             }
         }
         
@@ -512,7 +818,7 @@
             }
         }
 
-        // --- ABG Calculation Functions (omitted for brevity, assume they work as before) ---
+        // --- ABG Calculation Functions (Rest of interpretation logic) ---
 
         function parseABGInputs() {
             const getVal = (id) => {
@@ -841,4 +1147,5 @@
     </script>
 </body>
 </html>
+
 
