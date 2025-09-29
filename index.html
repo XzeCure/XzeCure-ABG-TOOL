@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XzeCure ICU tool</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- We'll use this link for the info icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <style>
         /* 1. Color Palette & Typography */
@@ -36,7 +34,7 @@
             font-family: 'Poppins', sans-serif;
             color: var(--text-white);
         }
-       
+        
         .card-panel {
             background-color: var(--bg-card);
             border-radius: 8px;
@@ -44,7 +42,7 @@
             border: 1px solid var(--border-dark);
             transition: box-shadow 0.3s ease;
         }
-       
+        
         /* Input Styling */
         input[type="number"], input[type="text"] {
             background-color: var(--bg-card);
@@ -70,9 +68,9 @@
             transition: all 0.3s ease;
             cursor: pointer;
             text-align: center;
-            border: 1px solid transparent;
+            border: 1:px solid transparent;
         }
-       
+        
         .btn-primary {
             background-color: var(--accent-teal);
             color: var(--bg-primary); /* Dark text on bright background */
@@ -96,7 +94,7 @@
             color: var(--bg-primary);
             box-shadow: 0 0 10px rgba(0, 191, 166, 0.2);
         }
-       
+        
         .btn-error {
             background-color: var(--color-error);
             color: var(--text-white);
@@ -120,7 +118,7 @@
             background-color: #2C2C2C;
             transform: translateY(-1px);
         }
-       
+        
         .protocol-item {
             cursor: pointer;
             transition: background-color 0.15s;
@@ -139,36 +137,7 @@
             color: var(--text-light);
         }
         .protocol-content.active {
-            max-height: 2000px;
-        }
-
-        /* Tooltip Styling */
-        .tooltip-container {
-            position: relative;
-            display: inline-block;
-        }
-        .tooltip-text {
-            visibility: hidden;
-            width: 250px;
-            background-color: var(--border-dark);
-            color: var(--text-light);
-            text-align: left;
-            border-radius: 6px;
-            padding: 10px;
-            position: absolute;
-            z-index: 10;
-            bottom: 125%; /* Position above the icon */
-            left: 50%;
-            margin-left: -125px; /* Center the tooltip */
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 0.75rem;
-            line-height: 1.3;
-            border: 1px solid var(--accent-teal);
-        }
-        .tooltip-container:hover .tooltip-text {
-            visibility: visible;
-            opacity: 1;
+            max-height: 2000px; 
         }
 
         /* Utility Overrides for Dark Mode */
@@ -178,10 +147,6 @@
         .text-blue-700 { color: var(--accent-teal); }
         .text-gray-700 { color: var(--text-light); }
         .text-gray-600 { color: var(--text-muted); }
-        .text-success { color: var(--color-success); }
-        .text-error { color: var(--color-error); }
-        .text-warning { color: var(--color-warning); }
-       
 
     </style>
 </head>
@@ -196,9 +161,9 @@
                 <h1 class="text-3xl font-bold text-white">XzeCure ICU tool</h1>
             </div>
         </div>
-       
+        
         <!-- Emergency Button - Uses Error Styling -->
-        <a href="https://api.whatsapp.com/send?phone=918200095781&text=My%20Patient%20needs%20urgent%20ICU%20care.%20Where%20can%20we%20refer%3F"
+        <a href="https://api.whatsapp.com/send?phone=918200095781&amp;text=My%20Patient%20needs%20urgent%20ICU%20care.%20Where%20can%20we%20refer%3F" 
             target="_blank"
             class="mt-4 md:mt-0 btn btn-error shadow-lg whitespace-nowrap">
             &#128680; Emergency (Refer to ICU)
@@ -207,43 +172,27 @@
 
     <!-- MAIN APP CONTAINER -->
     <div class="flex-grow">
-       
-        <!-- PROTOCOLS PAGE VIEW (Default) -->
+        
+        <!-- PROTOCOLS PAGE VIEW (Now Default) -->
         <div id="protocol-view" class="card-panel p-4 sm:p-6 mb-8">
             <div class="flex justify-between items-center mb-4 border-b border-gray-700 pb-2">
                 <h3 class="text-2xl font-bold text-white">Clinical Protocols</h3>
                 <button onclick="showCalculatorPage()" class="btn btn-secondary text-sm">
-                    ← Go to ABG Calculator
+                    &larr; Go to ABG Calculator
                 </button>
             </div>
-   <!-- Antibiotics Guide Button -->
-
-<div class="relative inline-block mb-4">
-
-  <a href="https://docs.google.com/document/d/11mpPbNQ8OSjIBTj02wBO7PJ8_UIbAaYcjf0omJ-3ApE/edit?usp=drivesdk"
-
-     target="_blank"
-
-     class="btn btn-primary">
-
-    📖 Antibiotics Guide
-
-  </a>
-
-  <span class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">NEW</span>
-
-</div>        
+            
             <!-- Protocol Category 1: RESUSCITATION & CODE BLUE -->
             <div id="protocol-category-1" onclick="toggleProtocolCategory('1')" class="protocol-category">
-                1) RESUSCITATION & CODE BLUE <span class="float-right text-lg arrow-1">→</span>
+                1) RESUSCITATION & CODE BLUE <span class="float-right text-lg arrow-1">&rarr;</span>
             </div>
             <div id="protocol-items-1" class="protocol-category-items border border-gray-700 p-3 rounded-lg mb-4 hidden space-y-2" style="background-color: #121212;">
                 <!-- Protocols 1A, 1B, 1C content goes here (structure is kept from previous step) -->
                 <div id="protocol-1A" class="rounded-lg overflow-hidden">
-                    <div onclick="toggleProtocol('protocol-1A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A (ACLS ALGORITHM)<span class="text-lg text-teal-500">▼</span></div>
+                    <div onclick="toggleProtocol('protocol-1A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A (ACLS ALGORITHM)<span class="text-lg text-teal-500">&#9660;</span></div>
                     <div id="protocol-1A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">
                         **A. ACLS — Adult Cardiac Arrest Algorithm**
-                       
+                        
                         **Indication:**
                           - Unresponsive patient, absent or abnormal breathing (agonal), and no palpable pulse.
                         **Goal:**
@@ -290,7 +239,7 @@
                     </div>
                 </div>
                 <div id="protocol-1B" class="rounded-lg overflow-hidden">
-                    <div onclick="toggleProtocol('protocol-1B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B (BLS ALGORITHM)<span class="text-lg text-teal-500">▼</span></div>
+                    <div onclick="toggleProtocol('protocol-1B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B (BLS ALGORITHM)<span class="text-lg text-teal-500">&#9660;</span></div>
                     <div id="protocol-1B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">
                         **B. BLS (Basic Life Support) for Healthcare Providers**
 
@@ -306,7 +255,7 @@
                     </div>
                 </div>
                 <div id="protocol-1C" class="rounded-lg overflow-hidden">
-                    <div onclick="toggleProtocol('protocol-1C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C (Post cardiac arrest)<span class="text-lg text-teal-500">▼</span></div>
+                    <div onclick="toggleProtocol('protocol-1C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C (Post cardiac arrest)<span class="text-lg text-teal-500">&#9660;</span></div>
                     <div id="protocol-1C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">
                         **C. Post-Cardiac Arrest Care (Immediate)**
 
@@ -328,12 +277,12 @@
 
             <!-- Protocol Category 2: AIRWAY & VENTILATION -->
             <div id="protocol-category-2" onclick="toggleProtocolCategory('2')" class="protocol-category">
-                2) AIRWAY & VENTILATION <span class="float-right text-lg arrow-2">→</span>
+                2) AIRWAY & VENTILATION <span class="float-right text-lg arrow-2">&rarr;</span>
             </div>
             <div id="protocol-items-2" class="protocol-category-items border border-gray-700 p-3 rounded-lg mb-4 hidden space-y-2" style="background-color: #121212;">
                  <!-- Protocols 2A - 2E content goes here -->
-                <div id="protocol-2A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-2A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) Rapid Sequence Intubation (RSI) Checklist (Adult)<span class="text-lg text-teal-500">▼</span></div><div id="protocol-2A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Rapid Sequence Intubation (RSI) Checklist (Adult)**
-                       
+                <div id="protocol-2A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-2A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) Rapid Sequence Intubation (RSI) Checklist (Adult)<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-2A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Rapid Sequence Intubation (RSI) Checklist (Adult)**
+                        
                         **Indication:**
                           - Need for definitive airway due to respiratory failure, loss of airway protection, GCS ≤ 8,
                             or anticipated deterioration.
@@ -361,8 +310,8 @@
                         **Escalation:**
                           - If oxygenation or ventilation inadequate, call senior ICU/anaesthesia and consider bronchoscopy or surgical airway.</div>
                 </div>
-                <div id="protocol-2B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-2B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) Difficult Airway Algorithm<span class="text-lg text-teal-500">▼</span></div><div id="protocol-2B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Difficult Airway Algorithm (Summary)**
-                       
+                <div id="protocol-2B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-2B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) Difficult Airway Algorithm<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-2B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Difficult Airway Algorithm (Summary)**
+                        
                         **Indication:**
                           - Predicted or encountered difficulty with bag-mask ventilation or endotracheal intubation.
                         **Checklist:**
@@ -373,7 +322,7 @@
                           5. If intubation fails but ventilation possible → consider awake techniques, fiberoptic, or supraglottic device.
                           6. If cannot ventilate/oxygenate → perform emergency cricothyroidotomy per instititutional guideline.</div>
                 </div>
-                <div id="protocol-2C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-2C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C) Extubation Criteria & Weaning Checklist<span class="text-lg text-teal-500">▼</span></div><div id="protocol-2C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Extubation Criteria & Weaning Checklist**
+                <div id="protocol-2C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-2C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C) Extubation Criteria & Weaning Checklist<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-2C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Extubation Criteria & Weaning Checklist**
 
                         **Indication:**
                           - Patient showing readiness for liberation from mechanical ventilation.
@@ -387,7 +336,7 @@
                           - Apply supplemental oxygen (HFNC or mask) as required; monitor respiratory status closely;
                             arrange chest physiotherapy and swallowing assessment if needed.</div>
                 </div>
-                <div id="protocol-2D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-2D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D) ARDS Ventilator Protocol (Lung-Protective Ventilation)<span class="text-lg text-teal-500">▼</span></div><div id="protocol-2D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. ARDS Ventilator Protocol (Lung-Protective Ventilation)**
+                <div id="protocol-2D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-2D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D) ARDS Ventilator Protocol (Lung-Protective Ventilation)<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-2D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. ARDS Ventilator Protocol (Lung-Protective Ventilation)**
 
                         **Indication:**
                           - ARDS: acute hypoxemic respiratory failure with bilateral infiltrates not explained by cardiac failure.
@@ -407,8 +356,8 @@
                         **Escalation:**
                           - If refractory hypoxemia → consider ECMO referral if available and appropriate.</div>
                 </div>
-                <div id="protocol-2E" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-2E-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">E) Non-Invasive Ventilation (NIV) Initiation Protocol<span class="text-lg text-teal-500">▼</span></div><div id="protocol-2E-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**E. Non-Invasive Ventilation (NIV) Initiation Protocol**
-                       
+                <div id="protocol-2E" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-2E-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">E) Non-Invasive Ventilation (NIV) Initiation Protocol<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-2E-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**E. Non-Invasive Ventilation (NIV) Initiation Protocol**
+                        
                         **Indication:**
                           - Acute hypercapnic respiratory failure (e.g., COPD exacerbation), cardiogenic pulmonary edema,
                             early hypoxemic failure in selected patients.
@@ -423,12 +372,12 @@
 
             <!-- Protocol Category 3: CIRCULATION & SHOCK MANAGEMENT -->
             <div id="protocol-category-3" onclick="toggleProtocolCategory('3')" class="protocol-category">
-                3) CIRCULATION & SHOCK MANAGEMENT <span class="float-right text-lg arrow-3">→</span>
+                3) CIRCULATION & SHOCK MANAGEMENT <span class="float-right text-lg arrow-3">&rarr;</span>
             </div>
             <div id="protocol-items-3" class="protocol-category-items border border-gray-700 p-3 rounded-lg mb-4 hidden space-y-2" style="background-color: #121212;">
                  <!-- Protocols 3A - 3D content goes here -->
-                <div id="protocol-3A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-3A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A. Sepsis / Septic Shock — Hour-1 Bundle & Management<span class="text-lg text-teal-500">▼</span></div><div id="protocol-3A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Sepsis / Septic Shock — Hour-1 Bundle & Management**
-                       
+                <div id="protocol-3A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-3A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A. Sepsis / Septic Shock — Hour-1 Bundle & Management<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-3A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Sepsis / Septic Shock — Hour-1 Bundle & Management**
+                        
                         **Indication:**
                           - Suspected or documented infection with organ dysfunction (qSOFA/SOFA) or septic shock.
                         **Goals:**
@@ -446,7 +395,7 @@
                         **Notes:**
                           - Early de-escalation based on culture results and stewardship review.</div>
                 </div>
-                <div id="protocol-3B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-3B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B. Vasopressor Initiation & Titration<span class="text-lg text-teal-500">▼</span></div><div id="protocol-3B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Vasopressor Initiation & Titration**
+                <div id="protocol-3B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-3B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B. Vasopressor Initiation & Titration<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-3B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Vasopressor Initiation & Titration**
 
                         **Indication:**
                           - Persistent hypotension after initial fluid resuscitation (MAP < 65 mmHg).
@@ -457,7 +406,7 @@
                         **Monitoring:**
                           - Continuous ECG for arrhythmias, peripheral perfusion, lactate trends, urine output.</div>
                 </div>
-                <div id="protocol-3C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-3C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C. Fluid Resuscitation Protocol<span class="text-lg text-teal-500">▼</span></div><div id="protocol-3C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Fluid Resuscitation Protocol**
+                <div id="protocol-3C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-3C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C. Fluid Resuscitation Protocol<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-3C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Fluid Resuscitation Protocol**
 
                         **Indication:**
                           - Hypovolemia or hypoperfusion states.
@@ -468,7 +417,7 @@
                         **Notes:**
                           - Avoid fluid overload; shift to vasopressors if non-responsive to fluid challenge.</div>
                 </div>
-                <div id="protocol-3D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-3D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D. Massive Transfusion Protocol (MTP)<span class="text-lg text-teal-500">▼</span></div><div id="protocol-3D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. Massive Transfusion Protocol (MTP)**
+                <div id="protocol-3D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-3D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D. Massive Transfusion Protocol (MTP)<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-3D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. Massive Transfusion Protocol (MTP)**
 
                         **Indication:**
                           - Ongoing hemorrhage with hemodynamic instability or anticipated massive blood loss.
@@ -484,12 +433,12 @@
 
             <!-- Protocol Category 4: Neurological Emergencies -->
             <div id="protocol-category-4" onclick="toggleProtocolCategory('4')" class="protocol-category">
-                4) Neurological Emergencies <span class="float-right text-lg arrow-4">→</span>
+                4) Neurological Emergencies <span class="float-right text-lg arrow-4">&rarr;</span>
             </div>
             <div id="protocol-items-4" class="protocol-category-items border border-gray-700 p-3 rounded-lg mb-4 hidden space-y-2" style="background-color: #121212;">
                  <!-- Protocols 4A - 4E content goes here -->
-                <div id="protocol-4A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-4A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A. Raised Intracranial Pressure (ICP) — Tiered Management<span class="text-lg text-teal-500">▼</span></div><div id="protocol-4A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Raised Intracranial Pressure (ICP) — Tiered Management**
-                       
+                <div id="protocol-4A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-4A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A. Raised Intracranial Pressure (ICP) — Tiered Management<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-4A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Raised Intracranial Pressure (ICP) — Tiered Management**
+                        
                         **Indication:**
                           - Clinical or measured ICP elevation (trauma, ICH, stroke).
                         **Goals:**
@@ -508,7 +457,7 @@
                         **Escalation:**
                           - Prompt neurosurgery consult for increasing ICP despite measures.</div>
                 </div>
-                <div id="protocol-4B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-4B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B. Status Epilepticus Management<span class="text-lg text-teal-500">▼</span></div><div id="protocol-4B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Status Epilepticus Management (Adult)**
+                <div id="protocol-4B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-4B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B. Status Epilepticus Management<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-4B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Status Epilepticus Management (Adult)**
 
                         **Indication:**
                           - Seizure activity > 5 minutes or recurrent seizures without recovery.
@@ -520,7 +469,7 @@
                         **Monitoring:**
                           - Continuous EEG if available, vital signs, ABG, electrolytes.</div>
                 </div>
-                <div id="protocol-4C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-4C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C. Acute Ischemic Stroke — Thrombolysis Checklist (IV tPA)<span class="text-lg text-teal-500">▼</span></div><div id="protocol-4C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Acute Ischemic Stroke — Thrombolysis Checklist (IV tPA)**
+                <div id="protocol-4C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-4C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C. Acute Ischemic Stroke — Thrombolysis Checklist (IV tPA)<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-4C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Acute Ischemic Stroke — Thrombolysis Checklist (IV tPA)**
 
                         **Indication:**
                           - Acute ischemic stroke within time window and no contraindications.
@@ -532,7 +481,7 @@
                         **Notes:**
                           - Follow AHA/ASA guidelines and local stroke pathway.</div>
                 </div>
-                <div id="protocol-4D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-4D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D. Intracerebral Hemorrhage (ICH) Emergency Management<span class="text-lg text-teal-500">▼</span></div><div id="protocol-4D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. Intracerebral Hemorrhage (ICH) Emergency Management**
+                <div id="protocol-4D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-4D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D. Intracerebral Hemorrhage (ICH) Emergency Management<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-4D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. Intracerebral Hemorrhage (ICH) Emergency Management**
 
                         **Indication:**
                           - ICH on imaging with neurological deterioration or large hematoma.
@@ -541,7 +490,7 @@
                           2. Control blood pressure per neuro/ICH protocol (avoid rapid BP swings).
                           3. Neurosurgery consult for possible surgical evacuation; monitor ICP and consider ICP-targeted therapy.</div>
                 </div>
-                <div id="protocol-4E" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-4E-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">E. Brain Death Determination Checklist<span class="text-lg text-teal-500">▼</span></div><div id="protocol-4E-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**E. Brain Death Determination Checklist**
+                <div id="protocol-4E" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-4E-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">E. Brain Death Determination Checklist<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-4E-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**E. Brain Death Determination Checklist**
 
                         **Indication:**
                           - Suspected brain death after catastrophic neurologic injury.
@@ -551,15 +500,15 @@
                             and document thoroughly. Involve neurology/neurosurgery and legal as required.</div>
                 </div>
             </div>
-           
+            
             <!-- Protocol Category 5: Respiratory Emergencies (NEW) -->
             <div id="protocol-category-5" onclick="toggleProtocolCategory('5')" class="protocol-category">
-                5) Respiratory Emergencies <span class="float-right text-lg arrow-5">→</span>
+                5) Respiratory Emergencies <span class="float-right text-lg arrow-5">&rarr;</span>
             </div>
             <div id="protocol-items-5" class="protocol-category-items border border-gray-700 p-3 rounded-lg mb-4 hidden space-y-2" style="background-color: #121212;">
                  <!-- Protocols 5A - 5D content goes here -->
-                <div id="protocol-5A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-5A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A. Acute Severe Asthma (Status Asthmaticus)<span class="text-lg text-teal-500">▼</span></div><div id="protocol-5A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Acute Severe Asthma (Status Asthmaticus)**
-                       
+                <div id="protocol-5A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-5A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A. Acute Severe Asthma (Status Asthmaticus)<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-5A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Acute Severe Asthma (Status Asthmaticus)**
+                        
                         **Indication:**
                           - Severe bronchospasm refractory to initial treatment; respiratory fatigue; life-threatening features.
                         **Checklist:**
@@ -571,7 +520,7 @@
                         **Monitoring:**
                           - ABG, electrolyte monitoring (K+), continuous SpO₂.</div>
                 </div>
-                <div id="protocol-5B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-5B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B. Acute COPD Exacerbation Management<span class="text-lg text-teal-500">▼</span></div><div id="protocol-5B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Acute COPD Exacerbation Management**
+                <div id="protocol-5B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-5B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B. Acute COPD Exacerbation Management<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-5B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Acute COPD Exacerbation Management**
 
                         **Checklist:**
                           1. Oxygen titrated to SpO₂ 88–92%.
@@ -580,7 +529,7 @@
                           4. NIV for hypercapnic respiratory failure; intubate if NIV fails or patient deteriorates.
                           5. Consider antibiotics if infection suspected.</div>
                 </div>
-                <div id="protocol-5C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-5C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C. Pulmonary Embolism (PE) — Acute Management<span class="text-lg text-teal-500">▼</span></div><div id="protocol-5C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Pulmonary Embolism (PE) — Acute Management**
+                <div id="protocol-5C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-5C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C. Pulmonary Embolism (PE) — Acute Management<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-5C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Pulmonary Embolism (PE) — Acute Management**
 
                         **Indication:**
                           - Suspected/confirmed PE with hemodynamic instability or RV strain.
@@ -589,7 +538,7 @@
                           - Hemodynamically stable: start anticoagulation (LMWH/UFH) unless contraindicated; imaging (CTPA) where feasible.
                           - For large burden / RV dysfunction: consider catheter-directed therapy or surgical embolectomy with specialist teams.</div>
                 </div>
-                <div id="protocol-5D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-5D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D. Tension Pneumothorax & Pneumothorax Management<span class="text-lg text-teal-500">▼</span></div><div id="protocol-5D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. Tension Pneumothorax & Pneumothorax Management**
+                <div id="protocol-5D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-5D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D. Tension Pneumothorax & Pneumothorax Management<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-5D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. Tension Pneumothorax & Pneumothorax Management**
 
                         **Indication:**
                           - Sudden respiratory distress, hypoxia, hypotension, unilateral absent breath sounds, possible tracheal deviation.
@@ -601,36 +550,36 @@
             </div>
 
             <div id="protocol-category-6" onclick="toggleProtocolCategory('6')" class="protocol-category">
-                6) Renal & Metabolic <span class="float-right text-lg arrow-6">→</span>
+                6) Renal & Metabolic <span class="float-right text-lg arrow-6">&rarr;</span>
             </div>
             <div id="protocol-items-6" class="protocol-category-items border border-gray-700 p-3 rounded-lg mb-4 hidden space-y-2" style="background-color: #121212;">
-                <div id="protocol-6A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-6A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) Acute Kidney Injury (AKI) — Initial Management (KDIGO Summary)<span class="text-lg text-teal-500">▼</span></div><div id="protocol-6A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Acute Kidney Injury (AKI) — Initial Management (KDIGO Summary)**
-               
+                <div id="protocol-6A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-6A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) Acute Kidney Injury (AKI) — Initial Management (KDIGO Summary)<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-6A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Acute Kidney Injury (AKI) — Initial Management (KDIGO Summary)**
+                
                 **Indication:**
                     - Increase in serum creatinine or reduction in urine output consistent with KDIGO criteria.
-               
+                
                 **Checklist:**
                     1. Identify and treat reversible causes: optimize hemodynamics for prerenal, relieve obstruction for postrenal.
                     2. Avoid or stop nephrotoxic medications where possible.
                     3. Monitor urine output hourly and check serum creatinine and electrolytes frequently.
                     4. Indications for RRT: refractory hyperkalemia, severe metabolic acidosis, refractory fluid overload, uremic complications.
-               
+                
                 **Notes:**
                     - Use KDIGO guidance for staging and management decisions.</div>
                 </div>
-                <div id="protocol-6B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-6B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) Dialysis Initiation Protocol (CRRT / SLED / IHD)<span class="text-lg text-teal-500">▼</span></div><div id="protocol-6B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Dialysis Initiation Protocol (CRRT / SLED / IHD)**
-               
+                <div id="protocol-6B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-6B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) Dialysis Initiation Protocol (CRRT / SLED / IHD)<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-6B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Dialysis Initiation Protocol (CRRT / SLED / IHD)**
+                
                 **Checklist:**
                     1. Consult nephrology to determine modality (CRRT preferred when hemodynamically unstable).
                     2. Secure vascular access (temporary dialysis catheter).
                     3. Anticoagulation plan (heparin, citrate, or none) per local policy.
                     4. Set fluid removal goals and monitor hemodynamics closely during therapy.</div>
                 </div>
-                <div id="protocol-6C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-6C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C) Diabetic Ketoacidosis (DKA) Management<span class="text-lg text-teal-500">▼</span></div><div id="protocol-6C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Diabetic Ketoacidosis (DKA) Management**
-               
+                <div id="protocol-6C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-6C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C) Diabetic Ketoacidosis (DKA) Management<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-6C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Diabetic Ketoacidosis (DKA) Management**
+                
                 **Indication:**
                     - Hyperglycemia with metabolic acidosis and ketonemia/ketonuria.
-               
+                
                 **Checklist:**
                     1. ABCs: ensure airway and oxygenation; establish IV access.
                     2. Initial IV fluids: 0.9% saline bolus (e.g., 1 L) then guided replacement based on volume status and serum sodium.
@@ -640,24 +589,24 @@
                     6. Replace potassium as needed and monitor frequently.
                     7. Transition to subcutaneous insulin when anion gap is closed, and patient tolerating enteral intake.</div>
                 </div>
-                <div id="protocol-6D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-6D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D) Hyperosmolar Hyperglycemic State (HHS)<span class="text-lg text-teal-500">▼</span></div><div id="protocol-6D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. Hyperosmolar Hyperglycemic State (HHS)**
-               
+                <div id="protocol-6D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-6D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D) Hyperosmolar Hyperglycemic State (HHS)<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-6D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. Hyperosmolar Hyperglycemic State (HHS)**
+                
                 **Checklist:**
                     1. Aggressive fluid resuscitation carefully titrated to age/heart status.
                     2. Insulin infusion started at lower rates than DKA after some fluid resuscitation.
                     3. Frequent electrolyte monitoring and replacement.
                     4. Treat precipitating factors.</div>
                 </div>
-                <div id="protocol-6E" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-6E-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">E) Electrolyte Emergencies (Rapid summary & immediate actions)<span class="text-lg text-teal-500">▼</span></div><div id="protocol-6E-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**E. Electrolyte Emergencies (Rapid summary & immediate actions)**
-               
+                <div id="protocol-6E" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-6E-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">E) Electrolyte Emergencies (Rapid summary & immediate actions)<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-6E-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**E. Electrolyte Emergencies (Rapid summary & immediate actions)**
+                
                 **Hyperkalemia:**
                     - Stabilize myocardium: IV calcium gluconate 10 mL 10% IV over 2–5 min if ECG changes.
                     - Shift K intracellularly: insulin 10 U IV + 25 g glucose, nebulized salbutamol (10–20 mg), sodium bicarbonate if severe acidosis.
                     - Remove K: loop diuretics (if diuretic-responsive), GI cation exchangers, dialysis if refractory.
-               
+                
                 **Hypokalemia:**
                     - IV replacement (KCl) with careful monitoring; central access recommended for rapid replacement (>10–20 mmol/hr).
-               
+                
                 **Hyponatremia:**
                     - Determine acute vs chronic. Symptomatic acute hyponatremia: bolus hypertonic saline 3% per local protocol.
                     - Chronic correction limit: ≤8–10 mmol/L per 24 hours to minimize osmotic demyelination risk.
@@ -669,42 +618,42 @@
             </div>
 
             <div id="protocol-category-7" onclick="toggleProtocolCategory('7')" class="protocol-category">
-                7) Cardiology in ICU <span class="float-right text-lg arrow-7">→</span>
+                7) Cardiology in ICU <span class="float-right text-lg arrow-7">&rarr;</span>
             </div>
             <div id="protocol-items-7" class="protocol-category-items border border-gray-700 p-3 rounded-lg mb-4 hidden space-y-2" style="background-color: #121212;">
-                <div id="protocol-7A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-7A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) STEMI / NSTEMI — Immediate Steps<span class="text-lg text-teal-500">▼</span></div><div id="protocol-7A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. STEMI / NSTEMI — Immediate Steps**
-               
+                <div id="protocol-7A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-7A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) STEMI / NSTEMI — Immediate Steps<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-7A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. STEMI / NSTEMI — Immediate Steps**
+                
                 **Checklist:**
                     1. Obtain immediate 12-lead ECG on arrival.
                     2. If STEMI identified, activate cath lab for primary PCI per local door-to-balloon targets while stabilizing the patient.
                     3. Administer antiplatelet and anticoagulant therapy per cardiology guidance, unless contraindicated.
                     4. For NSTEMI: risk stratify (e.g., GRACE score) and manage per cardiology recommendation.</div>
                 </div>
-                <div id="protocol-7B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-7B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) Cardiogenic Shock Protocol<span class="text-lg text-teal-500">▼</span></div><div id="protocol-7B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Cardiogenic Shock Protocol**
-               
+                <div id="protocol-7B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-7B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) Cardiogenic Shock Protocol<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-7B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Cardiogenic Shock Protocol**
+                
                 **Checklist:**
                     1. Airway and oxygenation support; consider early intubation if respiratory failure.
                     2. Hemodynamic monitoring: arterial line, consider pulmonary artery catheter if indicated.
                     3. Inotropes for low cardiac output (dobutamine) and vasopressors for hypotension (norepinephrine).
                     4. Consult cardiology/cardiothoracic surgery early for mechanical circulatory support options (IABP, Impella, ECMO).</div>
                 </div>
-                <div id="protocol-7C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-7C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C) Acute Pulmonary Edema / Flash Pulmonary Oedema<span class="text-lg text-teal-500">▼</span></div><div id="protocol-7C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Acute Pulmonary Edema / Flash Pulmonary Oedema**
-               
+                <div id="protocol-7C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-7C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C) Acute Pulmonary Edema / Flash Pulmonary Oedema<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-7C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Acute Pulmonary Edema / Flash Pulmonary Oedema**
+                
                 **Checklist:**
                     1. High-flow oxygen, sit patient upright.
                     2. IV loop diuretics (e.g., furosemide).
                     3. Consider nitrates if hypertensive.
                     4. Use NIV (CPAP/BiPAP) for respiratory support in selected patients.</div>
                 </div>
-                <div id="protocol-7D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-7D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D) Hypertensive Emergency<span class="text-lg text-teal-500">▼</span></div><div id="protocol-7D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. Hypertensive Emergency**
-               
+                <div id="protocol-7D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-7D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D) Hypertensive Emergency<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-7D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. Hypertensive Emergency**
+                
                 **Checklist:**
                     1. Rapidly assess for end-organ damage.
                     2. Lower MAP gradually (typically 10–20% within the first hour) unless specific exceptions (e.g., aortic dissection).
                     3. Use appropriate IV antihypertensives (e.g., nicardipine, labetalol, nitroprusside) tailored to clinical scenario.</div>
                 </div>
-                <div id="protocol-7E" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-7E-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">E) Pericardial Tamponade (Emergency)<span class="text-lg text-teal-500">▼</span></div><div id="protocol-7E-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**E. Pericardial Tamponade (Emergency)**
-               
+                <div id="protocol-7E" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-7E-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">E) Pericardial Tamponade (Emergency)<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-7E-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**E. Pericardial Tamponade (Emergency)**
+                
                 **Checklist:**
                     1. Recognize Beck's triad: hypotension, muffled heart sounds, JVD (may be absent).
                     2. Immediate echocardiographic assessment and urgent pericardiocentesis under echo guidance.
@@ -713,39 +662,39 @@
             </div>
 
             <div id="protocol-category-8" onclick="toggleProtocolCategory('8')" class="protocol-category">
-                8) Infectious Disease / ICU Infection Control <span class="float-right text-lg arrow-8">→</span>
+                8) Infectious Disease / ICU Infection Control <span class="float-right text-lg arrow-8">&rarr;</span>
             </div>
             <div id="protocol-items-8" class="protocol-category-items border border-gray-700 p-3 rounded-lg mb-4 hidden space-y-2" style="background-color: #121212;">
-                <div id="protocol-8A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-8A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) Empiric Antimicrobial Initiation Guide (ICU)<span class="text-lg text-teal-500">▼</span></div><div id="protocol-8A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Empiric Antimicrobial Initiation Guide (ICU)**
-               
+                <div id="protocol-8A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-8A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) Empiric Antimicrobial Initiation Guide (ICU)<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-8A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Empiric Antimicrobial Initiation Guide (ICU)**
+                
                 **Checklist:**
                     1. Determine likely infection source (respiratory, intraabdominal, urinary, catheter-related).
                     2. Choose empiric broad-spectrum antibiotics based on suspected source and local antibiogram.
                     3. Obtain appropriate cultures (blood, urine, sputum, site-specific) before antibiotics if this does not unduly delay therapy.
                     4. Reassess within 48–72 hours and narrow therapy based on culture data and clinical response.
-               
+                
                 **Notes:**
                     - Integrate antimicrobial stewardship review and local protocols for specific pathogens.</div>
                 </div>
-                <div id="protocol-8B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-8B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) CLABSI Prevention Bundle (Insertion & Maintenance)<span class="text-lg text-teal-500">▼</span></div><div id="protocol-8B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. CLABSI Prevention Bundle (Insertion & Maintenance)**
-               
+                <div id="protocol-8B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-8B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) CLABSI Prevention Bundle (Insertion & Maintenance)<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-8B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. CLABSI Prevention Bundle (Insertion & Maintenance)**
+                
                 **Insertion Bundle:**
                     1. Hand hygiene before procedure.
                     2. Maximal sterile barrier precautions (cap, mask, sterile gown, sterile gloves, full-body drape).
                     3. Chlorhexidine skin antisepsis.
                     4. Use ultrasound guidance for insertion when appropriate; choose subclavian/internal jugular over femoral when feasible.
-               
+                
                 **Maintenance Bundle:**
                     1. Daily assessment of line necessity and remove when no longer needed.
                     2. Transparent sterile dressing changes per policy and regular hub disinfection.
                     3. Replace administration sets per policy.
                     4. Document line insertion details and follow site care protocol.
-               
+                
                 **Notes:**
                     - Education and auditing reduce CLABSI rates.</div>
                 </div>
-                <div id="protocol-8C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-8C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C) VAP Prevention Bundle / VAE Prevention<span class="text-lg text-teal-500">▼</span></div><div id="protocol-8C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. VAP Prevention Bundle / VAE Prevention**
-               
+                <div id="protocol-8C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-8C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C) VAP Prevention Bundle / VAE Prevention<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-8C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. VAP Prevention Bundle / VAE Prevention**
+                
                 **Checklist:**
                     1. Elevate head of bed 30–45° unless contraindicated.
                     2. Daily sedation interruption and assess for SBT.
@@ -756,11 +705,11 @@
             </div>
 
             <div id="protocol-category-9" onclick="toggleProtocolCategory('9')" class="protocol-category">
-                9) Hematology & Transfusion <span class="float-right text-lg arrow-9">→</span>
+                9) Hematology & Transfusion <span class="float-right text-lg arrow-9">&rarr;</span>
             </div>
             <div id="protocol-items-9" class="protocol-category-items border border-gray-700 p-3 rounded-lg mb-4 hidden space-y-2" style="background-color: #121212;">
-                <div id="protocol-9A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-9A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) DIC Management Protocol<span class="text-lg text-teal-500">▼</span></div><div id="protocol-9A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. DIC Management Protocol**
-               
+                <div id="protocol-9A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-9A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) DIC Management Protocol<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-9A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. DIC Management Protocol**
+                
                 **Checklist:**
                     1. Treat underlying cause (infection, trauma, malignancy).
                     2. Support coagulation with blood products based on active bleeding and coagulation studies:
@@ -769,8 +718,8 @@
                         - Cryoprecipitate for low fibrinogen (<1.0 g/L).
                     3. Monitor CBC, coagulation parameters, fibrinogen, and clinical bleeding.</div>
                 </div>
-                <div id="protocol-9B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-9B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) Transfusion Reaction Management<span class="text-lg text-teal-500">▼</span></div><div id="protocol-9B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Transfusion Reaction Management**
-               
+                <div id="protocol-9B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-9B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) Transfusion Reaction Management<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-9B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Transfusion Reaction Management**
+                
                 **Checklist:**
                     1. Stop transfusion immediately and maintain IV access with normal saline.
                     2. Notify blood bank and return blood bag and tubing for investigation.
@@ -778,8 +727,8 @@
                     4. Treat anaphylaxis, bronchospasm, or hemolysis per standard protocols.
                     5. Document and report adverse event.</div>
                 </div>
-                <div id="protocol-9C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-9C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C) Anticoagulation & Reversal Protocols<span class="text-lg text-teal-500">▼</span></div><div id="protocol-9C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Anticoagulation & Reversal Protocols**
-               
+                <div id="protocol-9C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-9C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C) Anticoagulation & Reversal Protocols<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-9C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Anticoagulation & Reversal Protocols**
+                
                 **Checklist:**
                     1. For warfarin-associated major bleeding: give vitamin K and PCC (per institution dosing); consider FFP if PCC unavailable.
                     2. For dabigatran: idarucizumab if available for life-threatening bleeding.
@@ -789,11 +738,11 @@
             </div>
 
             <div id="protocol-category-10" onclick="toggleProtocolCategory('10')" class="protocol-category">
-                10) Procedural Checklists (Sterile, Step-by-Step) <span class="float-right text-lg arrow-10">→</span>
+                10) Procedural Checklists (Sterile, Step-by-Step) <span class="float-right text-lg arrow-10">&rarr;</span>
             </div>
             <div id="protocol-items-10" class="protocol-category-items border border-gray-700 p-3 rounded-lg mb-4 hidden space-y-2" style="background-color: #121212;">
-                <div id="protocol-10A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-10A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) Central Venous Catheter (CVC) Insertion Checklist<span class="text-lg text-teal-500">▼</span></div><div id="protocol-10A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Central Venous Catheter (CVC) Insertion Checklist**
-               
+                <div id="protocol-10A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-10A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) Central Venous Catheter (CVC) Insertion Checklist<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-10A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Central Venous Catheter (CVC) Insertion Checklist**
+                
                 **Checklist:**
                     1. Confirm indication and obtain informed consent (unless emergent).
                     2. Time-out and mark insertion site.
@@ -802,51 +751,51 @@
                     5. Prepare site with chlorhexidine and drape sterilely.
                     6. Insert catheter, confirm venous blood return, suture and secure, apply sterile transparent dressing.
                     7. Confirm tip position with CXR and document.
-               
+                
                 **Maintenance:**
                     - Daily review of necessity, dressing changes per protocol, hub disinfection, and documentation.</div>
                 </div>
-                <div id="protocol-10B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-10B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) Arterial Line Insertion Checklist<span class="text-lg text-teal-500">▼</span></div><div id="protocol-10B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Arterial Line Insertion Checklist**
-               
+                <div id="protocol-10B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-10B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) Arterial Line Insertion Checklist<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-10B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Arterial Line Insertion Checklist**
+                
                 **Checklist:**
                     1. Indication and consent; local anesthesia.
                     2. Use ultrasound if available.
                     3. Maintain aseptic technique; secure line and flush with heparinized saline if per local policy.
                     4. Label as arterial line and set up continuous waveform monitoring.</div>
                 </div>
-                <div id="protocol-10C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-10C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C) Chest Tube Insertion (Tube Thoracostomy) Checklist<span class="text-lg text-teal-500">▼</span></div><div id="protocol-10C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Chest Tube Insertion (Tube Thoracostomy) Checklist**
-               
+                <div id="protocol-10C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-10C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C) Chest Tube Insertion (Tube Thoracostomy) Checklist<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-10C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Chest Tube Insertion (Tube Thoracostomy) Checklist**
+                
                 **Checklist:**
                     1. Consent and site selection; ultrasound if indicated.
                     2. Sterile prep, local anesthesia, blunt dissection, insert tube and secure to chest wall.
                     3. Connect to underwater seal/suction, check for air leak, confirm position with CXR.
                     4. Record drain output and monitor respiratory status.</div>
                 </div>
-                <div id="protocol-10D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-10D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D) Lumbar Puncture Checklist<span class="text-lg text-teal-500">▼</span></div><div id="protocol-10D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. Lumbar Puncture Checklist**
-               
+                <div id="protocol-10D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-10D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D) Lumbar Puncture Checklist<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-10D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. Lumbar Puncture Checklist**
+                
                 **Checklist:**
                     1. Confirm indication and check for contraindications (raised ICP without imaging).
                     2. Obtain consent, position patient, perform sterile prep.
                     3. Measure opening pressure and collect CSF in labeled tubes for required tests.
                     4. Monitor patient post-procedure for headache or neurologic deterioration.</div>
                 </div>
-                <div id="protocol-10E" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-10E-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">E) Paracentesis / Thoracentesis Checklists<span class="text-lg text-teal-500">▼</span></div><div id="protocol-10E-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**E. Paracentesis / Thoracentesis Checklists**
-               
+                <div id="protocol-10E" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-10E-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">E) Paracentesis / Thoracentesis Checklists<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-10E-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**E. Paracentesis / Thoracentesis Checklists**
+                
                 **Checklist:**
                     1. Consent and ultrasound guidance when available.
                     2. Sterile prep and local anesthesia.
                     3. Aspirate fluid, send samples for cell count, chemistry, culture, and cytology as indicated.
                     4. Monitor for bleeding, hypotension, or respiratory compromise post-procedure.</div>
                 </div>
-                <div id="protocol-10F" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-10F-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">F) ICU Sedation & Analgesia Protocol<span class="text-lg text-teal-500">▼</span></div><div id="protocol-10F-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**F. ICU Sedation & Analgesia Protocol**
-               
+                <div id="protocol-10F" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-10F-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">F) ICU Sedation & Analgesia Protocol<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-10F-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**F. ICU Sedation & Analgesia Protocol**
+                
                 **Checklist:**
                     1. Set sedation target (RASS) and analgesia goals (CPOT/BPS).
                     2. Choose agents per indication (propofol, dexmedetomidine, midazolam) and apply daily sedation interruption where safe.
                     3. Monitor for delirium and implement prevention bundle.
                     4. Use multimodal analgesia strategies and titrate sedation to the minimum needed.</div>
                 </div>
-                <div id="protocol-10G" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-10G-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">G) Delirium Prevention & Management Protocol<span class="text-lg text-teal-500">▼</span></div><div id="protocol-10G-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**G. Delirium Prevention & Management Protocol**
+                <div id="protocol-10G" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-10G-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">G) Delirium Prevention & Management Protocol<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-10G-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**G. Delirium Prevention & Management Protocol**
                 
                 **Checklist:**
                     1. Preventative measures: orientation, sleep hygiene, noise reduction, early mobilization, ensure glasses/hearing aids.
@@ -856,11 +805,11 @@
             </div>
 
             <div id="protocol-category-11" onclick="toggleProtocolCategory('11')" class="protocol-category">
-                11) Endocrine / Thermoregulation <span class="float-right text-lg arrow-11">→</span>
+                11) Endocrine / Thermoregulation <span class="float-right text-lg arrow-11">&rarr;</span>
             </div>
             <div id="protocol-items-11" class="protocol-category-items border border-gray-700 p-3 rounded-lg mb-4 hidden space-y-2" style="background-color: #121212;">
-                <div id="protocol-11A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-11A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) Thyroid Storm Protocol<span class="text-lg text-teal-500">▼</span></div><div id="protocol-11A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Thyroid Storm Protocol**
-               
+                <div id="protocol-11A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-11A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) Thyroid Storm Protocol<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-11A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Thyroid Storm Protocol**
+                
                 **Checklist:**
                     1. Support ABCs; give high-dose antithyroid therapy (PTU or methimazole per local protocol).
                     2. Beta-blockade (propranolol or esmolol) to control sympathetic overactivity.
@@ -868,29 +817,29 @@
                     4. Give glucocorticoids to treat possible adrenal insufficiency and reduce T4→T3 conversion.
                     5. Aggressive cooling and supportive care; treat precipitating cause.</div>
                 </div>
-                <div id="protocol-11B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-11B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) Adrenal Crisis Protocol<span class="text-lg text-teal-500">▼</span></div><div id="protocol-11B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Adrenal Crisis Protocol**
-               
+                <div id="protocol-11B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-11B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) Adrenal Crisis Protocol<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-11B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Adrenal Crisis Protocol**
+                
                 **Checklist:**
                     1. Immediate IV hydrocortisone (e.g., 100 mg IV bolus then 50–100 mg q6h) and fluid resuscitation.
                     2. Check glucose, sodium, potassium; treat electrolyte abnormalities.
                     3. Search for precipitant (infection, stress) and consult endocrinology.</div>
                 </div>
-                <div id="protocol-11C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-11C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C) Myxedema Coma Protocol<span class="text-lg text-teal-500">▼</span></div><div id="protocol-11C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Myxedema Coma Protocol**
-               
+                <div id="protocol-11C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-11C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C) Myxedema Coma Protocol<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-11C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. Myxedema Coma Protocol**
+                
                 **Checklist:**
                     1. IV levothyroxine loading per endocrinology guidance and IV hydrocortisone empirically.
                     2. Passive rewarming, ventilatory support as needed, cautious correction of hyponatremia.
                     3. Urgent endocrine consult.</div>
                 </div>
-                <div id="protocol-11D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-11D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D) Hyperthermia / Malignant Hyperthermia / Heat Stroke<span class="text-lg text-teal-500">▼</span></div><div id="protocol-11D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. Hyperthermia / Malignant Hyperthermia / Heat Stroke**
-               
+                <div id="protocol-11D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-11D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D) Hyperthermia / Malignant Hyperthermia / Heat Stroke<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-11D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. Hyperthermia / Malignant Hyperthermia / Heat Stroke**
+                
                 **Checklist:**
                     1. Immediate cooling measures (active cooling, ice packs, evaporative cooling).
                     2. For malignant hyperthermia: dantrolene IV per weight-based dosing emergently; stop triggering agents and supportive care for rhabdomyolysis.
                     3. Monitor renal function, electrolytes, CK and manage complications.</div>
                 </div>
-                <div id="protocol-11E" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-11E-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">E) Targeted Temperature Management (TTM) — Post-Cardiac Arrest<span class="text-lg text-teal-500">▼</span></div><div id="protocol-11E-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**E. Targeted Temperature Management (TTM) — Post-Cardiac Arrest**
-               
+                <div id="protocol-11E" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-11E-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">E) Targeted Temperature Management (TTM) — Post-Cardiac Arrest<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-11E-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**E. Targeted Temperature Management (TTM) — Post-Cardiac Arrest**
+                
                 **Checklist:**
                     1. Identify eligible comatose post-ROSC patients for TTM per local protocol.
                     2. Initiate cooling to target temperature (e.g., 32–36°C) and maintain for specified duration (often 24 hours).
@@ -899,36 +848,36 @@
             </div>
 
             <div id="protocol-category-12" onclick="toggleProtocolCategory('12')" class="protocol-category">
-                12) Daily ICU Care Bundles & Routine Protocols <span class="float-right text-lg arrow-12">→</span>
+                12) Daily ICU Care Bundles & Routine Protocols <span class="float-right text-lg arrow-12">&rarr;</span>
             </div>
             <div id="protocol-items-12" class="protocol-category-items border border-gray-700 p-3 rounded-lg mb-4 hidden space-y-2" style="background-color: #121212;">
-                <div id="protocol-12A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-12A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) Daily Sedation Interruption & Spontaneous Breathing Trial (SAT/SBT)<span class="text-lg text-teal-500">▼</span></div><div id="protocol-12A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Daily Sedation Interruption & Spontaneous Breathing Trial (SAT/SBT)**
+                <div id="protocol-12A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-12A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) Daily Sedation Interruption & Spontaneous Breathing Trial (SAT/SBT)<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-12A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Daily Sedation Interruption & Spontaneous Breathing Trial (SAT/SBT)**
                 
                 **Checklist:**
                     1. Assess patient daily for readiness to interrupt sedation and attempt SBT.
                     2. Perform SBT (30–120 min on T-piece or low support) and monitor for failure criteria.
                     3. If SBT passed → consider extubation after cuff leak test and airway assessment.</div>
                 </div>
-                <div id="protocol-12B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-12B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) VAP Prevention Bundle<span class="text-lg text-teal-500">▼</span></div><div id="protocol-12B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. VAP Prevention Bundle**
-               
+                <div id="protocol-12B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-12B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) VAP Prevention Bundle<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-12B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. VAP Prevention Bundle**
+                
                 **Checklist:**
                     - Head of bed elevated 30–45°; oral care with chlorhexidine; daily sedation break & SBT; subglottic secretion drainage; DVT and peptic ulcer prophylaxis as indicated.</div>
                 </div>
-                <div id="protocol-12C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-12C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C) DVT Prophylaxis Protocol<span class="text-lg text-teal-500">▼</span></div><div id="protocol-12C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. DVT Prophylaxis Protocol**
-               
+                <div id="protocol-12C" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-12C-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">C) DVT Prophylaxis Protocol<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-12C-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**C. DVT Prophylaxis Protocol**
+                
                 **Checklist:**
                     1. Evaluate bleeding risk; provide pharmacologic prophylaxis (LMWH/UFH) if not contraindicated.
                     2. Use mechanical prophylaxis if pharmacologic prophylaxis contraindicated.
                     3. Reassess daily.</div>
                 </div>
-                <div id="protocol-12D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-12D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D) Stress Ulcer Prophylaxis Protocol<span class="text-lg text-teal-500">▼</span></div><div id="protocol-12D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. Stress Ulcer Prophylaxis Protocol**
-               
+                <div id="protocol-12D" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-12D-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">D) Stress Ulcer Prophylaxis Protocol<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-12D-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**D. Stress Ulcer Prophylaxis Protocol**
+                
                 **Checklist:**
                     1. Identify high-risk patients (coagulopathy, prolonged ventilation) and consider PPI or H2 antagonist.
                     2. Review need for ongoing prophylaxis daily and discontinue when low risk.</div>
                 </div>
-                <div id="protocol-12E" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-12E-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">E) Early Mobilization Protocol<span class="text-lg text-teal-500">▼</span></div><div id="protocol-12E-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**E. Early Mobilization Protocol**
-               
+                <div id="protocol-12E" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-12E-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">E) Early Mobilization Protocol<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-12E-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**E. Early Mobilization Protocol**
+                
                 **Checklist:**
                     1. Daily mobility goals with PT/OT involvement.
                     2. Progress from passive range-of-motion to sitting, standing, and ambulation as tolerated with safety assessment.</div>
@@ -936,18 +885,18 @@
             </div>
 
             <div id="protocol-category-13" onclick="toggleProtocolCategory('13')" class="protocol-category">
-                13) Misc / Toxicology / Specific Emergencies <span class="float-right text-lg arrow-13">→</span>
+                13) Misc / Toxicology / Specific Emergencies <span class="float-right text-lg arrow-13">&rarr;</span>
             </div>
             <div id="protocol-items-13" class="protocol-category-items border border-gray-700 p-3 rounded-lg mb-4 hidden space-y-2" style="background-color: #121212;">
-                <div id="protocol-13A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-13A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) Toxin / Overdose Emergency Checklist<span class="text-lg text-teal-500">▼</span></div><div id="protocol-13A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Toxin / Overdose Emergency Checklist**
-               
+                <div id="protocol-13A" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-13A-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">A) Toxin / Overdose Emergency Checklist<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-13A-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**A. Toxin / Overdose Emergency Checklist**
+                
                 **Checklist:**
                     1. ABCs and supportive care; consider decontamination if appropriate and timely.
                     2. Give specific antidotes where indicated (e.g., naloxone for opioids, N-acetylcysteine for acetaminophen per nomogram).
                     3. Monitor ECG, electrolytes, renal and hepatic function and consult toxicology.</div>
                 </div>
-                <div id="protocol-13B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-13B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) Severe Hypoglycemia Emergency<span class="text-lg text-teal-500">▼</span></div><div id="protocol-13B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Severe Hypoglycemia Emergency**
-               
+                <div id="protocol-13B" class="rounded-lg overflow-hidden"><div onclick="toggleProtocol('protocol-13B-content')" class="protocol-item p-3 flex justify-between items-center font-semibold text-teal-400 text-sm">B) Severe Hypoglycemia Emergency<span class="text-lg text-teal-500">&#9660;</span></div><div id="protocol-13B-content" class="protocol-content p-4 text-xs whitespace-pre-wrap" style="background-color: #252525;">**B. Severe Hypoglycemia Emergency**
+                
                 **Checklist:**
                     1. If IV access: give 25 g of 50% dextrose IV push (adults) and re-check glucose.
                     2. If no IV access: give intramuscular glucagon.
@@ -955,44 +904,24 @@
                 </div>
             </div>
         </div>
-       
-        <!-- ABG CALCULATOR VIEW (Hidden by Default) -->
+        
+        <!-- ABG CALCULATOR VIEW (Now Hidden by Default) -->
         <div id="abg-view" class="card-panel p-4 sm:p-6 mb-8 hidden">
             <h2 class="text-xl font-semibold mb-4 text-teal-500 border-b border-gray-700 pb-2">ABG Interpretation and Metabolic Status</h2>
-           
+            
             <!-- ABG Inputs -->
             <div id="abg-inputs" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
                 <div class="col-span-1"><label class="block text-xs font-medium text-gray-400">pH <span class="text-red-500">*</span></label><input type="number" id="input_pH" value="7.18" step="0.01" class="w-full p-2 text-sm"></div>
                 <div class="col-span-1"><label class="block text-xs font-medium text-gray-400">PaCO₂ (mmHg) <span class="text-red-500">*</span></label><input type="number" id="input_paco2" value="28" class="w-full p-2 text-sm"></div>
                 <div class="col-span-1"><label class="block text-xs font-medium text-gray-400">HCO₃⁻ (mmol/L) <span class="text-red-500">*</span></label><input type="number" id="input_hco3" value="8" class="w-full p-2 text-sm"></div>
-               
+                
                 <div class="col-span-1"><label class="block text-xs font-medium text-gray-400">Na (mmol/L)</label><input type="number" id="input_na" value="135" class="w-full p-2 text-sm"></div>
                 <div class="col-span-1"><label class="block text-xs font-medium text-gray-400">Cl (mmol/L)</label><input type="number" id="input_cl" value="95" class="w-full p-2 text-sm"></div>
                 <div class="col-span-1"><label class="block text-xs font-medium text-gray-400">K (mmol/L)</label><input type="number" id="input_k" value="4.5" class="w-full p-2 text-sm"></div>
-               
-                <div class="col-span-1">
-                    <label class="block text-xs font-medium text-gray-400">
-                        PaO₂ (mmHg)
-                    </label>
-                    <input type="number" id="input_pao2" value="90" class="w-full p-2 text-sm">
-                </div>
-                <!-- FiO2 Input with new Tooltip -->
-                <div class="col-span-1">
-                    <label class="block text-xs font-medium text-gray-400 flex items-center">
-                        FiO₂ (0.21 - 1.0)
-                        <span class="tooltip-container ml-1 text-teal-400 cursor-pointer text-sm">
-                            <i class="fas fa-info-circle"></i>
-                            <span class="tooltip-text">
-                                **Enter FiO₂ as decimal or percent.**<br>
-                                Example: Room air = 0.21 or 21.<br>
-                                For 30% oxygen enter 0.30 or 30.<br>
-                                If you type a whole number >1, the app treats it as percent.
-                            </span>
-                        </span>
-                    </label>
-                    <input type="number" id="input_fio2" value="0.21" step="0.01" class="w-full p-2 text-sm">
-                </div>
-         
+                
+                <div class="col-span-1"><label class="block text-xs font-medium text-gray-400">PaO₂ (mmHg)</label><input type="number" id="input_pao2" value="90" class="w-full p-2 text-sm"></div>
+                <div class="col-span-1"><label class="block text-xs font-medium text-gray-400">FiO₂ (0.21 - 1.0)</label><input type="number" id="input_fio2" value="0.21" step="0.01" class="w-full p-2 text-sm"></div>
+                <div class="col-span-1"><label class="block text-xs font-medium text-gray-400">Age (Years)</label><input type="number" id="input_age" value="30" class="w-full p-2 text-sm"></div>
                 <div class="col-span-1"><label class="block text-xs font-medium text-gray-400">Albumin (g/dL)</label><input type="number" id="input_albumin" value="4.0" step="0.1" class="w-full p-2 text-sm"></div>
                 <div class="col-span-1"><label class="block text-xs font-medium text-gray-400">Lactate (mmol/L)</label><input type="number" id="input_lactate" value="3.2" step="0.1" class="w-full p-2 text-sm"></div>
             </div>
@@ -1003,7 +932,7 @@
                     Interpret ABG & Metabolic Status
                 </button>
                 <button onclick="showProtocolsPage()" class="w-full sm:w-1/3 btn btn-secondary relative">
-                    View Protocols
+                    View Protocols 
                     <span class="absolute top-0 right-0 -mt-2 -mr-2 px-2 py-0.5 text-xs font-bold leading-none bg-red-600 rounded-full" style="background-color: var(--color-error); color: var(--text-white);">NEW</span>
                 </button>
             </div>
@@ -1015,7 +944,6 @@
             <!-- Results Output -->
             <div id="abg-output" class="mt-6 pt-4 hidden border-t border-gray-700">
                 <div id="result-summary"></div>
-                <div id="management-suggestions" class="mt-6"></div> <!-- New Suggestions Block -->
                 <button id="toggle-log" onclick="toggleCalculationLog()" class="mt-3 text-sm font-medium text-teal-500 hover:text-teal-400">Show Calculation Log</button>
                 <div id="calculation-log" class="mt-3 p-3 rounded-lg text-xs hidden whitespace-pre-wrap overflow-x-auto" style="background-color: #252525; color: var(--text-muted);"></div>
             </div>
@@ -1026,9 +954,9 @@
     <!-- Promotional Footer -->
     <footer class="mt-8 pt-6 border-t border-gray-700 card-panel p-6">
         <h3 class="text-lg font-bold text-white mb-4">&#128218; Learn Critical Care with Dr. XzeCure</h3>
-       
+        
         <div class="flex flex-col md:flex-row md:space-x-8 space-y-6 md:space-y-0 text-sm">
-           
+            
             <!-- Courses and Social -->
             <div class="md:w-1/3">
                 <h4 class="font-semibold text-teal-500 mb-2 border-b border-gray-700 pb-1">Courses & Social Media</h4>
@@ -1043,7 +971,7 @@
 
             <!-- Books & E-books -->
             <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-6">
-               
+                
                 <!-- Book 1 -->
                 <div>
                     <h4 class="font-semibold text-teal-500 mb-2 border-b border-gray-700 pb-1">&#128216; 1. ICU ESSENTIALS</h4>
@@ -1076,16 +1004,16 @@
         <p class="text-center text-xs text-gray-500 mt-6" style="color: var(--text-muted);">Copyright XzeCure 2025</p>
     </footer>
 
-   
+    
     <script>
         // Global Constants
-        const ALGORITHM_VERSION = '3.3.0-FullICU';
+        const ALGORITHM_VERSION = '3.2.0-FullICU'; 
         const NORMAL_AG = 12;
         const NORMAL_HCO3 = 24;
         const NORMAL_PCO2 = 40;
         const NORMAL_ALBUMIN_GDL = 4.0;
-        const PH_WATER = 47;
-        const RESPIRATORY_QUOTIENT = 0.8;
+        const PH_WATER = 47; 
+        const RESPIRATORY_QUOTIENT = 0.8; 
 
         // Define strict normal ranges for primary interpretation
         const REF_PH_MIN = 7.35;
@@ -1111,8 +1039,9 @@
         function showCalculatorPage() {
             document.getElementById('protocol-view').classList.add('hidden');
             document.getElementById('abg-view').classList.remove('hidden');
-           
+            
             // Immediately interpret ABG with current inputs when switching to calculator view
+            // This ensures the user sees the output for the default/last entered values.
             interpretABG();
         }
 
@@ -1139,7 +1068,7 @@
                 arrow.innerHTML = '↓'; // Down arrow
             }
         }
-       
+        
         function toggleProtocol(contentId) {
             const content = document.getElementById(contentId);
             const isContentOpen = content.classList.contains('active');
@@ -1150,7 +1079,7 @@
                     c.classList.remove('active');
                 }
             });
-           
+            
             // Toggle the clicked content
             if (!isContentOpen) {
                 content.classList.add('active');
@@ -1170,20 +1099,9 @@
 
             const inputs = {
                 pH: getVal('input_pH'), paco2: getVal('input_paco2'), hco3: getVal('input_hco3'),
-                pao2: getVal('input_pao2'), na: getVal('input_na'),
+                pao2: getVal('input_pao2'), fio2: getVal('input_fio2'), na: getVal('input_na'),
                 k: getVal('input_k'), cl: getVal('input_cl'), albumin: getVal('input_albumin'),
                 lactate: getVal('input_lactate'), age: getVal('input_age'), pb: 760,
-                // NEW FiO2 Logic
-                fio2: (function(){
-                    let raw = document.getElementById('input_fio2').value;
-                    if (!raw) return null;
-                    raw = parseFloat(raw);
-                    if (isNaN(raw)) return null;
-                    if (raw > 1) raw = raw / 100.0;   // treat numbers >1 as %
-                    if (raw < 0.21) raw = 0.21;       // clamp to minimum
-                    if (raw > 1.0) raw = 1.0;         // clamp to maximum
-                    return parseFloat(raw.toFixed(2));
-                })(),
             };
 
             if (inputs.pH === null || inputs.paco2 === null || inputs.hco3 === null) {
@@ -1208,8 +1126,6 @@
             let delta_ratio = null;
             let a_a = null;
             let pf = null;
-            let management_notes = [];
-
 
             // 1. Determine Normal Status
             const isNormal = (pH >= REF_PH_MIN && pH <= REF_PH_MAX) &&
@@ -1225,12 +1141,11 @@
                     calculation_log: ["1. All primary ABG values (pH, PaCO2, HCO3) are within the normal reference range."],
                     confidence_score: 1.0,
                     timestamp: now_iso(),
-                    management_notes: ["The patient is in normal acid-base and electrolyte balance. Continue routine ICU monitoring."]
                 };
             }
 
 
-            // 2. Determine Primary Disturbance
+            // 2. Continue full interpretation if not perfectly normal
             let acid_base_state = "near-normal";
             if (pH < REF_PH_MIN) acid_base_state = "acidosis";
             else if (pH > REF_PH_MAX) acid_base_state = "alkalosis";
@@ -1242,26 +1157,13 @@
 
             let primary_candidates = [];
             if (acid_base_state === "acidosis") {
-                if (paCO2_dir === "high") {
-                    primary_candidates.push("Respiratory Acidosis");
-                    management_notes.push("Respiratory Acidosis: **Evaluate ventilation** (check vent settings, look for auto-PEEP, sedation level, or airway obstruction). **Goal:** Improve CO₂ clearance.");
-                }
-                if (HCO3_dir === "low") {
-                    primary_candidates.push("Metabolic Acidosis");
-                    management_notes.push("Metabolic Acidosis: **Evaluate cause** (check lactate for sepsis/shock, check renal function, consider toxin/ketoacids). **Goal:** Treat underlying cause. Consider bicarbonate only if severe (pH < 7.1).");
-                }
+                if (paCO2_dir === "high") primary_candidates.push("Respiratory Acidosis");
+                if (HCO3_dir === "low") primary_candidates.push("Metabolic Acidosis");
             } else if (acid_base_state === "alkalosis") {
-                if (paCO2_dir === "low") {
-                    primary_candidates.push("Respiratory Alkalosis");
-                    management_notes.push("Respiratory Alkalosis: **Evaluate cause** (check for pain, anxiety, fever, hypoxemia, ventilator drive). **Goal:** Reduce unnecessary hyperventilation (e.g., address pain/anxiety or lower vent rate/tidal volume).");
-                }
-                if (HCO3_dir === "high") {
-                    primary_candidates.push("Metabolic Alkalosis");
-                    management_notes.push("Metabolic Alkalosis: **Evaluate cause** (check volume status, look for NG suction/vomiting, diuretic use, low K+ or Cl⁻). **Goal:** Correct volume, potassium, and chloride deficits; consider acetazolamide if volume-overloaded.");
-                }
+                if (paCO2_dir === "low") primary_candidates.push("Respiratory Alkalosis");
+                if (HCO3_dir === "high") primary_candidates.push("Metabolic Alkalosis");
             }
-           
-            // 3. Anion Gap Calculation
+            
             let ag_check_value = null;
             if (na !== null && cl !== null) {
                 ag = na - (cl + hco3);
@@ -1276,38 +1178,23 @@
                     calc_log.push(`   Corrected AG: ${corrected_ag.toFixed(1)}`);
                 }
 
-                if (ag_check_value > NORMAL_AG + 2) {
-                    let ag_label = "High AG Metabolic Acidosis";
-                    // If metabolic acidosis was already primary, update its name. If not, this is a mixed disorder.
-                    if (!primary_candidates.some(c => c.includes("Metabolic Acidosis")) && HCO3_dir === "low") {
-                        primary_candidates.push(ag_label);
+                if (ag_check_value > NORMAL_AG + 2) { 
+                    if (primary_candidates.includes("Metabolic Acidosis") === false && HCO3_dir === "low") {
+                        primary_candidates.push("High AG Metabolic Acidosis"); 
                     } else if (primary_candidates.includes("Metabolic Acidosis")) {
-                        primary_candidates[primary_candidates.indexOf("Metabolic Acidosis")] = ag_label;
-                    } else if (HCO3_dir !== "low") {
-                         // High AG with normal HCO3 is often occult metabolic acidosis/alkalosis mixed.
-                         primary_candidates.push("Concurrent Metabolic Alkalosis masking High AG Acidosis (Mixed Disorder)");
-                         mixed = true;
+                        primary_candidates[primary_candidates.indexOf("Metabolic Acidosis")] = "High AG Metabolic Acidosis";
                     }
-                   
-                    if (HCO3_dir === "low") {
-                        const deltaAG = ag_check_value - NORMAL_AG;
-                        const deltaHCO3 = NORMAL_HCO3 - hco3;
-                        
-                        if (deltaHCO3 !== 0) {
-                            delta_ratio = parseFloat((deltaAG / deltaHCO3).toFixed(2));
-                            calc_log.push(`   Delta Ratio (ΔAG/ΔHCO3): ${delta_ratio}`);
-                            if (delta_ratio < 0.4 || delta_ratio > 2.0) mixed = true;
-                        }
+                    
+                    const deltaAG = ag_check_value - NORMAL_AG;
+                    const deltaHCO3 = NORMAL_HCO3 - hco3;
+                    
+                    if (deltaHCO3 !== 0) {
+                        delta_ratio = parseFloat((deltaAG / deltaHCO3).toFixed(2));
+                        calc_log.push(`   Delta Ratio (ΔAG/ΔHCO3): ${delta_ratio}`);
                     }
-                } else if (ag_check_value < NORMAL_AG - 2 && HCO3_dir === "low") {
-                     // Non-Anion Gap Metabolic Acidosis
-                     if (!primary_candidates.some(c => c.includes("Metabolic Acidosis"))) {
-                        primary_candidates.push("Non-Anion Gap Metabolic Acidosis (NAGMA)");
-                     }
                 }
             }
 
-            // 4. Compensation Check
             const tolerance = 2.0;
             if (primary_candidates.some(c => c.includes("Metabolic Acidosis"))) {
                 const expected_paco2_min = (1.5 * hco3 + 8) - tolerance;
@@ -1319,7 +1206,7 @@
                 compensation.metabolic_acidosis_winter = { expected_paco2_range: `${expected_paco2_min.toFixed(1)} - ${expected_paco2_max.toFixed(1)}`, observed_vs_expected: status };
                 calc_log.push(`4. Compensation Check (Met Acidosis): PaCO2 expected ${compensation.metabolic_acidosis_winter.expected_paco2_range} -> ${status}`);
             }
-           
+            
             if (primary_candidates.includes("Respiratory Acidosis")) {
                 const delta_pco2 = paco2 - NORMAL_PCO2;
                 const expected_hco3_acute = NORMAL_HCO3 + (1 * (delta_pco2 / 10));
@@ -1342,13 +1229,12 @@
                 } else if (paCO2_dir !== "normal" || HCO3_dir !== "normal") {
                     primary_candidates.push("Fully Compensated Disorder (Requires context)");
                 } else {
-                    primary_candidates.push("Normal Acid-Base Status (Minimal Derangement)");
+                    primary_candidates.push("Normal Acid-Base Status (Minimal Derangement)"); 
                 }
             } else if (primary_candidates.length === 0) {
                  primary_candidates.push("Indeterminate Primary Disturbance");
             }
-            
-            // 5. Oxygenation Metrics (P/F Ratio & A-a Gradient)
+
             let aa_interpret = null;
             let pf_interpret = null;
             let normal_Aa = null;
@@ -1357,11 +1243,11 @@
                 const PAO2 = fio2 * (pb - PH_WATER) - (paco2 / RESPIRATORY_QUOTIENT);
                 const A_a_value = PAO2 - pao2;
                 a_a = { value: parseFloat(A_a_value.toFixed(1)) };
-               
+                
                 normal_Aa = age !== null ? (age / 4.0) + 4.0 : 10.0;
                 a_a.normal_for_age = parseFloat(normal_Aa.toFixed(1));
 
-                if (A_a_value <= normal_Aa) { aa_interpret = "A-a gradient is normal (Hypoventilation or normal gas exchange)."; }
+                if (A_a_value <= normal_Aa) { aa_interpret = "A-a gradient is normal (Hypoventilation or normal gas exchange)."; } 
                 else { aa_interpret = "A-a gradient is elevated (V/Q mismatch or shunt likely)."; }
                 a_a.interpretation = aa_interpret;
                 calc_log.push(`5. A-a Gradient: ${a_a.value} (Normal < ${a_a.normal_for_age}) -> ${aa_interpret}`);
@@ -1369,36 +1255,15 @@
 
                 const PF_VALUE = pao2 / fio2;
                 pf = { value: parseFloat(PF_VALUE.toFixed(1)) };
-               
-                // NEW Hyperoxia Warning Logic
-                if (PF_VALUE < 100) {
-                    pf_interpret = "Severe hypoxemia (ARDS criteria severe)";
-                    management_notes.push("Hypoxemia (Severe, P/F < 100): **Immediate respiratory optimization** (FiO₂/PEEP titration, consider ARDSNet protocol, assess for need of prone positioning or ECMO referral).");
-                }
-                else if (PF_VALUE < 200) {
-                    pf_interpret = "Moderate hypoxemia (ARDS criteria moderate)";
-                    management_notes.push("Hypoxemia (Moderate, P/F < 200): **Optimize PEEP/FiO₂** (use ARDSNet table). Check for lung pathology (pneumonia, edema, atelectasis).");
-                }
-                else if (PF_VALUE < 300) {
-                    pf_interpret = "Mild hypoxemia (ARDS criteria mild)";
-                    management_notes.push("Hypoxemia (Mild, P/F < 300): **Investigate cause of V/Q mismatch** (e.g., fluid overload, minor atelectasis). Continue FiO₂ titration.");
-                }
-                else {
-                    pf_interpret = "Normal oxygenation";
-                    if (pao2 > 100 && fio2 > 0.3) {
-                        pf_interpret += " (PaO₂ is supranormal on high FiO₂ — consider weaning O₂)";
-                        management_notes.push("Hyperoxia Detected: **Wean FiO₂** to maintain SpO₂ 90–94% (or 88–92% in COPD) to minimize oxygen toxicity.");
-                    }
-                }
+                
+                if (PF_VALUE < 100) pf_interpret = "Severe hypoxemia (ARDS criteria severe)";
+                else if (PF_VALUE < 200) pf_interpret = "Moderate hypoxemia (ARDS criteria moderate)";
+                else if (PF_VALUE < 300) pf_interpret = "Mild hypoxemia (ARDS criteria mild)";
+                else pf_interpret = "Normal oxygenation";
                 pf.interpretation = pf_interpret;
                 calc_log.push(`   P/F Ratio: ${pf.value} -> ${pf_interpret}`);
             }
-           
-            // Final Diagnosis Construction
-            if (mixed) {
-                primary_candidates.push('**MIXED** Acid-Base Disorder (Multiple Simultaneous Processes)');
-            }
-
+            
             let max_confidence = 0.6;
             const final_diagnosis_list = primary_candidates.map(cand => {
                 const ph_dev = Math.abs(7.4 - pH);
@@ -1406,6 +1271,10 @@
                 max_confidence = Math.max(max_confidence, conf);
                 return { label: cand, confidence: parseFloat(conf.toFixed(2)), rationale: `pH ${acid_base_state}, PaCO2 ${paCO2_dir}, HCO3 ${HCO3_dir}.` };
             });
+
+            if (mixed) {
+                final_diagnosis_list.push({ label: 'Mixed Acid-Base Disorder Confirmed', confidence: 0.85, rationale: 'Compensation limits exceeded or conflicting primary changes detected.' });
+            }
 
             const confidence = Math.max(0.1, Math.min(0.99, max_confidence));
 
@@ -1420,7 +1289,6 @@
                 calculation_log: calc_log,
                 confidence_score: parseFloat(confidence.toFixed(2)),
                 timestamp: now_iso(),
-                management_notes: management_notes.length > 0 ? management_notes : ["No critical acid-base/oxygenation issues detected. Continue general supportive care."]
             };
         }
 
@@ -1430,7 +1298,6 @@
             document.getElementById('abg-error').classList.add('hidden');
             document.getElementById('toggle-log').classList.add('hidden');
             document.getElementById('calculation-log').classList.add('hidden');
-            document.getElementById('management-suggestions').innerHTML = ''; // Clear suggestions
 
             const inputs = parseABGInputs();
             if (inputs.error) {
@@ -1443,10 +1310,11 @@
             try {
                 const result = interpretABGAlgorithm(inputs);
                 const summaryDiv = document.getElementById('result-summary');
-                const suggestionsDiv = document.getElementById('management-suggestions');
                 const primaryDiag = result.primary_diagnoses[0];
 
                 let isNormal = primaryDiag.label.includes('Normal Acid-Base Status');
+                let backgroundClass = isNormal ? 'border-success' : 
+                                     (result.mixed_disorder_detected || inputs.pH < REF_PH_MIN || inputs.pH > REF_PH_MAX ? 'border-error' : 'border-accent-blue');
                 let headerColor = isNormal ? 'var(--color-success)' : 'var(--text-white)';
 
                 let html = `
@@ -1458,35 +1326,22 @@
                             </h3>
                             ${result.primary_diagnoses.slice(1).map(d => `<p class="text-sm italic ml-1" style="color: var(--color-error);">Mixed/Secondary: ${d.label}</p>`).join('')}
                         </div>
-                       
+                        
                         <h4 class="font-semibold" style="color: var(--text-light);">Key Metrics:</h4>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm p-4 rounded-lg border" style="background-color: #252525; border-color: var(--border-dark);">
                             <div><span style="color: var(--text-muted);">pH / State:</span> <span class="font-bold">${inputs.pH}</span></div>
                             <div><span style="color: var(--text-muted);">PaCO₂:</span> <span class="font-bold">${inputs.paco2} mmHg</span></div>
                             <div><span style="color: var(--text-muted);">HCO₃⁻:</span> <span class="font-bold">${inputs.hco3} mmol/L</span></div>
                             <div><span style="color: var(--text-muted);">AG (Corrected):</span> <span class="font-bold">${result.anion_gap.corrected !== null ? result.anion_gap.corrected.toFixed(1) : (result.anion_gap.value !== null ? result.anion_gap.value.toFixed(1) : 'N/A')}</span></div>
-                            ${result.delta_ratio ? `<div><span style="color: var(--text-muted);">Delta Ratio:</span> <span class="font-bold text-warning">${result.delta_ratio}</span></div>` : ''}
+                            ${result.delta_ratio ? `<div><span style="color: var(--text-muted);">Delta Ratio:</span> <span class="font-bold" style="color: var(--color-warning);">${result.delta_ratio}</span></div>` : ''}
                             ${result.pf_ratio ? `<div><span style="color: var(--text-muted);">PF Ratio:</span> <span class="font-bold" style="color: ${result.pf_ratio.value < 300 ? 'var(--color-error)' : 'var(--color-success)'};">${result.pf_ratio.value}</span></div>` : ''}
                             ${result.a_a_gradient ? `<div><span style="color: var(--text-muted);">A-a Grad:</span> <span class="font-bold">${result.a_a_gradient.value} mmHg</span></div>` : ''}
                             ${inputs.lactate ? `<div><span style="color: var(--text-muted);">Lactate:</span> <span class="font-bold" style="color: ${inputs.lactate > 4.0 ? 'var(--color-error)' : (inputs.lactate > 2.0 ? 'var(--color-warning)' : 'var(--color-success)')};">${inputs.lactate} mmol/L</span></div>` : ''}
                         </div>
                     </div>
                 `;
-               
-                // NEW Management Suggestions Output
-                let suggestionsHtml = `
-                    <h4 class="font-semibold mt-6" style="color: var(--text-light);">Management Suggestions:</h4>
-                    <ul class="p-3 rounded-lg border text-sm space-y-2" style="background-color: #252525; border-color: var(--border-dark);">
-                        ${result.management_notes.map(note => `<li>${note}</li>`).join('')}
-                    </ul>
-                    <div class="p-3 text-xs rounded-lg mt-3 font-semibold text-error border border-error bg-red-900/20">
-                        ⚠️ **Disclaimer:** These are generalized management suggestions.
-                        Please confirm patient condition, full clinical context, and primary diagnosis before making any changes.
-                    </div>
-                `;
-
+                
                 summaryDiv.innerHTML = html;
-                suggestionsDiv.innerHTML = suggestionsHtml;
                 document.getElementById('calculation-log').innerText = result.calculation_log.join('\n');
                 document.getElementById('toggle-log').classList.remove('hidden');
 
@@ -1512,9 +1367,10 @@
             }
         }
 
-        // Initial setup on load (Protocols view is default)
+        // Initial setup on load (No immediate ABG interpretation needed since we start on the protocol page)
         window.onload = function() {
-            // Note: No initial ABG interpretation call here, as the protocol view is the default.
+            // No action needed: Protocol view is shown by default in HTML.
+            // The ABG calculation will be run when the user switches to the calculator view via showCalculatorPage().
         };
 
     </script>
