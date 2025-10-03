@@ -920,7 +920,20 @@
                 <div class="col-span-1"><label class="block text-xs font-medium text-gray-400">K (mmol/L)</label><input type="number" id="input_k" value="4.5" class="w-full p-2 text-sm"></div>
                 
                 <div class="col-span-1"><label class="block text-xs font-medium text-gray-400">PaO₂ (mmHg)</label><input type="number" id="input_pao2" value="90" class="w-full p-2 text-sm"></div>
-                <div class="col-span-1"><label class="block text-xs font-medium text-gray-400">FiO₂ (0.21 - 1.0)</label><input type="number" id="input_fio2" value="0.21" step="0.01" class="w-full p-2 text-sm"></div>
+              <div class="col-span-1 relative">
+  <label class="block text-xs font-medium text-gray-400 flex items-center">
+    FiO₂
+    <!-- Info Button -->
+    <button type="button" 
+            class="ml-1 text-xs text-teal-400 bg-gray-800 rounded-full w-4 h-4 flex items-center justify-center"
+            title="For room air, enter 0.21.
+For additional O₂, use decimals:
+e.g. 50% = 0.5, 100% = 1">
+      i
+    </button>
+  </label>
+  <input type="number" id="input_fio2" value="0.21" step="0.01" class="w-full p-2 text-sm">
+</div>
                 <div class="col-span-1"><label class="block text-xs font-medium text-gray-400">Age (Years)</label><input type="number" id="input_age" value="30" class="w-full p-2 text-sm"></div>
                 <div class="col-span-1"><label class="block text-xs font-medium text-gray-400">Albumin (g/dL)</label><input type="number" id="input_albumin" value="4.0" step="0.1" class="w-full p-2 text-sm"></div>
                 <div class="col-span-1"><label class="block text-xs font-medium text-gray-400">Lactate (mmol/L)</label><input type="number" id="input_lactate" value="3.2" step="0.1" class="w-full p-2 text-sm"></div>
